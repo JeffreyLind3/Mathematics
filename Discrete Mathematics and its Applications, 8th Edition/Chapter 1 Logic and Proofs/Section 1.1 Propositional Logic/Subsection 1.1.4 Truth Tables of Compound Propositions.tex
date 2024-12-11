@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.4 Truth Tables of Compound Propositions}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.4 Truth Tables of Compound Propositions \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+We have now introduced five important logical connectives - conjunction, disjunction, exclusive or, implication, and the biconditional operator - and negation. We can use these connectives to build up complicated compound propositions involving several propositional variables. We can use truth tables to determine the truth values of these compound propositions, as Example \ref{Example: 14} illustrates. We use a separate column to find the truth value of each compound expression in the compound proposition as it is built up. The truth values of the compound proposition for each combination of truth values of the propositional variables are found in the final column of the table.
+
+\begin{example}\label{Example: 14}
+    Construct the truth table of the compound proposition
+    \begin{equation*}
+        (p \lor \lnot q) \to (p \land q)
+    \end{equation*}
+
+    \noindent
+    \textbf{Solution:}
+    Because this truth table involves two propositional variables \(p\) and \(q\), there are four rows in this truth table, one for each of the pairs of truth values TT, TF, FT, and FF. The first two columns are used for the truth values of \(p\) and \(q\). In the third column, we find the truth value of \(\lnot q\), needed to find the truth value of \(p \lor \lnot q\), found in the fourth column. The fifth column gives the truth value of \(p \land q\). Finally, the truth value \((p \lor \lnot q) \to (p \land q)\) is found in the last column. Table \ref{Table: 7} shows the resulting truth table.
+\end{example}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c}
+        \(p\) & \(q\) & \(\lnot q\) & \(p \lor \lnot q\) & \(p \land q\) & \((p \lor \lnot q) \to (p \land q)\) \\
+        T     & T     & F           & T                  & T             & T                                    \\
+        T     & F     & T           & T                  & F             & F                                    \\
+        F     & T     & F           & F                  & F             & T                                    \\
+        F     & F     & T           & T                  & F             & F
+    \end{tabular}
+    \caption{The Truth Table of \((p \lor \lnot q) \to (p \land q)\)}
+    \label{Table: 7}
+\end{table}
+
+\printbibliography
+
+\end{document}

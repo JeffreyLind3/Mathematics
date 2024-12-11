@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.2 Applications of Propositional Logic - Subsection 1.2.3 System Specifications}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.2 Applications of Propositional Logic - Subsection 1.2.3 System Specifications \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+Translating sentences in natural language (such as English) into logical expressions is an essential part of specifying both hardware and software systems. System and software engineers take requirements in natural language and produce precise and unambiguous specifications that can be used as the basis for system development. Example \ref{Example: 3} shows how compound propositions can be used in this process.
+
+\begin{example}\label{Example: 3}
+    Express the specification "The automated reply cannot be sent when the file system is full" using logical connectives.
+
+    \noindent
+    \textbf{Solution:}
+    One way to translate this is to let \(p\) denote "The automated reply can be sent" and \(q\) denote "The file system is full." Then \(\lnot p\) represents "It is not the case that the automated reply can be sent," which can also be expressed as "The automated reply cannot be sent." Consequently, our specification can be represented by the conditional statement \(q \to \lnot p\).
+\end{example}
+
+System specifications should be \textbf{consistent}, that is, they should not contain conflicting requirements that could be used to derive a contradiction. When specifications are not consistent, there would be no way to develop a system that satisfies all specifications.
+
+\begin{example}\label{Example: 4}
+    Determine whether these system specifications are consistent:
+    \begin{center}
+        "The diagnostic message is stored in the buffer or it is retransmitted."
+    \end{center}
+    \begin{center}
+        "The diagnostic message is not stored in the buffer."
+    \end{center}
+    \begin{center}
+        "If the diagnostic message is stored in the buffer, then it is retransmitted."
+    \end{center}
+
+    \noindent
+    \textbf{Solution:}
+    To determine whether these specifications are consistent, we first express them using logical expressions. Let \(p\) denote "The diagnostic message is stored in the buffer" and let \(q\) denote "The diagnostic message is retransmitted." The specification can then be written as \(p \lor q\), \(\lnot p\), and \(p \to q\). An assignment of truth values that makes all three specifications true must have \(p\) false to make \(\lnot p\) true. Because we want \(p \lor q\) to be true but \(p\) must be false, \(q\) must be true. Because \(p \to q\) is true when \(p\) is false and \(q\) is true, we conclude that these specifications are consistent, because they are all true when \(p\) is false and \(q\) is true. We could come to the same conclusion by use of a truth table to examine the four possible assignments of truth values to \(p\) and \(q\).
+\end{example}
+
+\begin{example}
+    Do the system specifications in Example \ref{Example: 4} remain consistent if the specification "The diagnostic message is not retransmitted" is added?
+
+    \noindent
+    \textbf{Solution:}
+    By the reasoning in Example \ref{Example: 4}, the three specifications from that example are true only in the case when \(p\) is false and \(q\) is true. However, this new specification is \(\lnot q\), which is false when \(q\) is true. Consequently, these four specifications are inconsistent.
+\end{example}
+
+\printbibliography
+
+\end{document}

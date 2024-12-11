@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.6 Logic and Bit Operations}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.6 Logic and Bit Operations \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+Computers represent information using bits. A \textbf{bit} is a symbol with two possible values, namely, \(0\) (zero) and \(1\) (one). The meaning of the word bit comes from \textit{b}inary dig\textit{it}, because zeros and ones are the digits used in binary representations of numbers. The well-known statistician John Tukey introduced this terminology in 1946. A bit can be used to represent a truth value, because there are two truth values, namely, \textit{true} and \textit{false}. As is customarily done, we will use a \(1\) bit to represent true and a \(0\) bit to represent false. That is, \(1\) represents T (true), \(0\) represents F (false). A variable is called a \textbf{Boolean variable} if its value is either true or false. Consequently, a Boolean variable can be represented using a bit.
+
+Computer \textbf{bit operations} correspond to the logical connectives. By replacing true by a one and false by a zero in the truth table for the operations \(\land\), \(\lor\), and \(\oplus\), the columns in Table \ref{Table: 9} for the corresponding bit operations are obtained. We will also use the notation \(OR\), \(AND\), and \(XOR\) for the operations \(\lor\), \(\land\), and \(\oplus\), as is done in various programming languages.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \(x\) & \(y\) & \(x \lor y\) & \(x \land y\) & \(x \oplus y\) \\
+        \(0\) & \(0\) & \(0\)        & \(0\)         & \(0\)          \\
+        \(0\) & \(1\) & \(1\)        & \(0\)         & \(1\)          \\
+        \(1\) & \(0\) & \(1\)        & \(0\)         & \(1\)          \\
+        \(1\) & \(1\) & \(1\)        & \(1\)         & \(0\)
+    \end{tabular}
+    \caption{Table for the Bit Operators \(OR\), \(AND\), and \(XOR\).}
+    \label{Table: 9}
+\end{table}
+
+Information is often represented using bit strings, which are lists of zeros and ones. When this is done, operations on the bit strings can be used to manipulate this information.
+
+\begin{definition}
+    A \textit{bit string} is a sequence of zero or more bits. The \textit{length} of this string is the number of bits in the string.
+\end{definition}
+
+\begin{example}
+    \(101010011\) is a bit string of length nine.
+\end{example}
+
+We can extend bit operations to bit strings. We define the \textbf{bitwise \(OR\)}, \textbf{bitwise \(AND\)}, and \textbf{bitwise \(XOR\)} of two strings of the same length to be the strings that have as their bits the \(OR\), \(AND\), and \(XOR\) of the corresponding bits in the two strings, respectively. We use the symbols \(\lor\), \(\land\), and \(\oplus\) to represent the bitwise \(OR\), bitwise \(AND\), and bitwise \(XOR\) operations, respectively. We illustrate bitwise operations on bit strings with Example \ref{Example: 16}.
+
+\begin{example}\label{Example: 16}
+    Find the bitwise \(OR\), bitwise \(AND\), and bitwise \(XOR\) of the bit strings \(01 \ 1011 \ 0110\) and \(11 \ 0001 \ 1101\). (Here, and throughout this book, bit strings will be split into blocks of four bits to make them easier to read.)
+
+    \noindent
+    \textbf{Solution:}
+    The bitwise \(OR\), bitwise \(AND\), and bitwise \(XOR\) of these strings are obtained by taking the \(OR\), \(AND\), and \(XOR\) of the corresponding bits, respectively. This gives us
+    
+    \begin{tabular}{cc}
+        \(01 \ 1011 \ 0110\) &                                   \\
+        \(11 \ 0001 \ 1101\) &                                   \\
+        \hline               &                                   \\
+        \(11 \ 1011 \ 1111\) & \textcolor{blue}{bitwise \(OR\)}  \\
+        \(01 \ 0001 \ 0100\) & \textcolor{blue}{bitwise \(AND\)} \\
+        \(10 \ 1010 \ 1011\) & \textcolor{blue}{bitwise \(XOR\)}
+    \end{tabular}
+\end{example}
+
+\printbibliography
+
+\end{document}

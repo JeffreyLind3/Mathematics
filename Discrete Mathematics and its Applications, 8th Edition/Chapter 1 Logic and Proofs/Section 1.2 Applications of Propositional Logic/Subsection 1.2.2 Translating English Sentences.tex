@@ -1,0 +1,64 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.2 Applications of Propositional Logic - Subsection 1.2.2 Translating English Sentences}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.2 Applications of Propositional Logic - Subsection 1.2.2 Translating English Sentences \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+There are many reasons to translate English sentences into expressions involving propositional variables and logical connectives. In particular, English (and every other human language) is often ambiguous. Translating sentences into compound statements (and other types of logical expressions, which we will introduce later in this chapter) removes the ambiguity. Note that this may involve making a set of reasonable assumptions based on the intended meaning of the sentence. Moreover, once we have translated sentences from English into logical expressions, we can analyze these logical expressions to determine their truth values, we can manipulate them, and we can use rules of inference (which are discussed in Section 1.6) to reason about them.
+
+To illustrate the process of translating an English sentence into a logical expression, consider Examples \ref{Example: 1} and \ref{Example: 2}.
+
+\begin{example}\label{Example: 1}
+    How can this English sentence be translated into a logical expression?
+    \begin{center}
+        "You can access the Internet from campus only if you are a computer science major or you are not a freshman."
+    \end{center}
+
+    \noindent
+    \textbf{Solution:}
+    There are many ways to translate this sentence into a logical expression. Although it is possible to represent the sentence by a single propositional variable, such as \(p\), this would not be useful when analyzing its meaning or reasoning with it. Instead, we will use propositional variables to represent each sentence part and determine the appropriate logical connectives between them. In particular, we let \(a\), \(c\), and \(f\) represent "You can access the Internet from campus," "You are a computer science major," and "You are a freshman," respectively. Noting that "only if" is one way a conditional statement can be expressed, this sentence can be represented as
+    \begin{equation}
+        a \to (c \lor \lnot f).
+    \end{equation}
+\end{example}
+
+\begin{example}\label{Example: 2}
+    How can this English sentence be translated into a logical expression?
+    \begin{center}
+        "You cannot ride the roller coaster if you are under \(4\) feet tall unless you are older than \(16\) years old."
+    \end{center}
+
+    \noindent
+    \textbf{Solution:}
+    Let \(q\), \(r\), and \(s\) represent "You can ride the roller coaster," "You are under \(4\) feet tall," and "You are older than \(16\) years old," respectively. Then the sentence can be translated to
+    \begin{equation}
+        (r \land \lnot s) \to \lnot q.
+    \end{equation}
+    There are other ways to represent the original sentence as a logical expression, but the one we have used should meet our needs.
+\end{example}
+
+\printbibliography
+
+\end{document}

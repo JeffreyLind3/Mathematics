@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.2 Logical Equivalences}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.2 Logical Equivalences \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+Compound propositions that have the same truth values in all possible cases are called \textbf{logically equivalent}. We can also define this notion as follows.
+
+\begin{definition}
+    The compound propositions \(p\) and \(q\) are called \textit{logically equivalent} if \(p \leftrightarrow q\) is a tautology. The notation \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
+\end{definition}
+
+\textbf{\textit{Remark:}} The symbol \(\equiv\) is not a logical connective, and \(p \equiv q\) is not a compound proposition but rather is the statement that \(p \leftrightarrow q\) is a tautology. The symbol \(\Leftrightarrow\) is sometimes used instead of \(\equiv\) to denote logical equivalence.
+
+One way to determine whether two compound propositions are equivalent is to use a truth table. In particular, the compound propositions \(p\) and \(q\) are equivalent if and only if the columns giving their truth values agree. Example \ref{Example: 2} illustrates this method to establish an extremely important and useful logical equivalence, namely, that of \(\lnot (p \lor q)\) with \(\lnot p \land \lnot q\). This logical equivalence is one of the two \textbf{De Morgan laws}, shown in Table \ref{Table: 2}, named after the English mathematician Augustus De Morgan, of the mid-nineteenth century.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c}
+        \(\lnot (p \land q) \equiv \lnot p \lor \lnot q\) \\
+        \(\lnot (p \lor q) \equiv \lnot p \land \lnot q\)
+    \end{tabular}
+    \caption{De Morgan's Laws.}
+    \label{Table: 2}
+\end{table}
+
+\begin{example}\label{Example: 2}
+    Show that \(\lnot (p \lor q)\) and \(\lnot p \land \lnot q\) are logically equivalent.
+
+    \noindent
+    \textbf{Solution:}
+    The truth tables for these compound propositions are displayed in Table \ref{Table: 3}. Because the truth values of the compound propositions \(\lnot (p \lor q)\) and \(\lnot p \land \lnot q\) agree for all possible combinations of the truth values of \(p\) and \(q\), it follows that \(\lnot (p \lor q) \leftrightarrow (\lnot p \land \lnot q)\) is a tautology and that these compound propositions are logically equivalent.
+\end{example}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc|c|c|c|c|c}
+        \(p\) & \(q\) & \(p \lor q\) & \(\lnot (p \lor q)\) & \(\lnot p\) & \(\lnot q\) & \(\lnot p \land \lnot q\) \\
+        T     & T     & T            & F                    & F           & F           & F                         \\
+        T     & F     & T            & F                    & F           & T           & F                         \\
+        F     & T     & T            & F                    & T           & F           & F                         \\
+        F     & F     & F            & T                    & T           & T           & T
+    \end{tabular}
+    \caption{Truth Tables for \(\lnot (p \lor q)\) and \(\lnot p \land \lnot q\)}.
+    \label{Table: 3}
+\end{table}
+
+The next example establishes an extremely important equivalence. It allows us to replace conditional statements with negations and disjunctions.
+
+\begin{example}
+    Show that \(p \to q\) and \(\lnot p \lor q\) are logically equivalent. (This is known as the \textbf{conditional-disjunction equivalence.})
+
+    \noindent
+    \textbf{Solution:}
+    We construct the truth table for these compound propositions in Table \ref{Table: 4}. Because the truth values of \(\lnot p \lor q\) and \(p \to q\) agree, they are logically equivalent.
+\end{example}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc|c|c|c}
+        \(p\) & \(q\) & \(\lnot p\) & \(\lnot p \lor q\) & \(p \to q\) \\
+        T     & T     & F           & T                  & T           \\
+        T     & F     & F           & F                  & F           \\
+        F     & T     & T           & T                  & T           \\
+        F     & F     & T           & T                  & T
+    \end{tabular}
+    \caption{Truth Tables for \(\lnot p \lor q\) and \(p \to q\).}
+    \label{Table: 4}
+\end{table}
+
+We will now establish a logical equivalence of two compound propositions involving three different propositional variables \(p\), \(q\), and \(r\). To use a truth table to establish such a logical equivalence, we need eight rows, one for each possible combination of truth values of these three variables. We symbolically represent these combinations by listing the truth values of \(p\), \(q\), and \(r\), respectively. These eight combinations of truth values are TTT, TTF, TFT, TFF, FTT, FTF, FFT, and FFF; we use this order when we display the rows of the truth table. Note that we need to double the number of rows in the truth tables we use to show that compound propositions are equivalent for each additional propositional variable, so that \(16\) rows are needed to establish the logical equivalence of two compound propositions involving four propositional variables, and so on. In general, \(2^n\) rows are required if a compound proposition involves \(n\) propositional variables. Because of the rapid growth of \(2^n\), more efficient ways are needed to establish logical equivalences, such as by using ones we already know. This technique will be discussed later.
+
+\begin{example}
+    Show that \(p \lor (q \land r)\) and \((p \lor q) \land (p \lor r)\) are logically equivalent. This is the \textit{distributive law} of disjunction over conjunction.
+
+    \noindent
+    \textbf{Solution:}
+    We construct the truth table for these compound propositions in Table \ref{Table: 5}. Because the truth values of \(p \lor (q \land r)\) and \((p \lor q) \land (p \lor r)\) agree, these compound propositions are logically equivalent.
+\end{example}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc|c|c|c|c|c}
+    \(p\) & \(q\) & \(r\) & \(q \land r\) & \(p \lor (q \land r)\) & \(p \lor q\) & \(p \lor r\) & \((p \lor q) \land (p \lor r)\) \\
+    T     & T     & T     & T             & T                      & T            & T            & T                               \\
+    T     & T     & F     & F             & T                      & T            & T            & T                               \\
+    T     & F     & T     & F             & T                      & T            & T            & T                               \\
+    T     & F     & F     & F             & T                      & T            & T            & T                               \\
+    F     & T     & T     & T             & T                      & T            & T            & T                               \\
+    F     & T     & F     & F             & F                      & T            & F            & F                               \\
+    F     & F     & T     & F             & F                      & F            & T            & F                               \\
+    F     & F     & F     & F             & F                      & F            & F            & F
+    \end{tabular}
+    \caption{A Demonstration That \(p \lor (q \land r)\) and \((p \lor q) \land (p \lor r)\) Are Logically Equivalent.}
+    \label{Table: 5}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c}
+        \textit{Equivalence}                                       & \textit{Name}       \\
+        \(p \land \textbf{T} \equiv p\)                            & Identity laws       \\
+        \(p \lor \textbf{T} \equiv p\)                             &                     \\
+        \(p \lor \textbf{T} \equiv \textbf{T}\)                    & Domination laws     \\
+        \(p \land \textbf{F} \equiv \textbf{F}\)                   &                     \\
+        \(p \lor p \equiv p\)                                      & Idempotent laws     \\
+        \(p \land p \equiv p\)                                     &                     \\
+        \(\lnot (\lnot p) \equiv p\)                               & Double negation law \\
+        \(p \lor q \equiv q \lor p\)                               & Commutative laws    \\
+        \(p \land q \equiv q \land p\)                             &                     \\
+        \((p \lor q) \lor r \equiv p \lor (q \lor r)\)             & Associative laws    \\
+        \((p \land q) \land r\ \equiv p \land (q \land r)\)        &                     \\
+        \(p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)\)  & Distributive laws   \\
+        \(p \land (q \lor r) \equiv (p \land q) \lor (p \land r)\) &                     \\
+        \(\lnot (p \land q) \equiv \lnot p \lor \lnot q\)          & De Morgan's laws    \\
+        \(\lnot (p \lor q) \equiv \lnot p \land \lnot q\)          &                     \\
+        \(p \lor (p \land q) \equiv p\)                            & Absorption laws     \\
+        \(p \land (p \lor q) \equiv p\)                            &                     \\
+        \(p \lor \lnot p \equiv \textbf{T}\)                       & Negation laws       \\
+        \(p \land \lnot p \equiv \textbf{F}\)                      &
+    \end{tabular}
+    \caption{Logical Equivalences.}
+    \label{Table: 6}
+\end{table}
+
+Table \ref{Table: 6} contains some important equivalences. In these equivalences, \textbf{T} denotes the compound proposition that is always true and \textbf{F} denotes the compound proposition that is always false. We also display some useful equivalences for compound propositions involving conditional statements and biconditional statements in Tables \ref{Table: 7} and \ref{Table: 8}, respectively. The reader is asked to verify the equivalences in Tables \ref{Table: 6}-\ref{Table: 8} in the exercises.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c}
+        \(p \to q \equiv \lnot p \lor q\)                      \\
+        \(p \to q \equiv \lnot q \to \lnot p\)                 \\
+        \(p \lor q \equiv \lnot p \to q\)                      \\
+        \(p \land q \equiv \lnot (p \to \lnot q)\)             \\
+        \(\lnot (p \to q) \equiv p \land \lnot q\)             \\
+        \((p \to q) \land (p \to r) \equiv p \to (q \land r)\) \\
+        \((p \to r) \land (q \to r) \equiv (p \lor q) \to r\)  \\
+        \((p \to q) \lor (p \to r) \equiv p \to (q \lor r)\)   \\
+        \((p \to r) \lor (q \to r) \equiv (p \land q) \to r\)
+    \end{tabular}
+    \caption{Logical Equivalences Involving Conditional Statements.}
+    \label{Table: 7}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c}
+        \(p \leftrightarrow q \equiv (p \to q) \land (q \to p)\)                \\
+        \(p \leftrightarrow q \equiv \lnot p \leftrightarrow \lnot q\)          \\
+        \(p \leftrightarrow q \equiv (p \land q) \lor (\lnot p \land \lnot q)\) \\
+        \(\lnot (p \leftrightarrow q) \equiv p \leftrightarrow \lnot q\)
+    \end{tabular}
+    \caption{Logical Equivalences Involving Biconditional Statements.}
+    \label{Table: 8}
+\end{table}
+
+The associative law for disjunction shows that the expression \(p \lor q \lor r\) is well defined, in the sense that it does not matter whether we first take the disjunction of \(p\) with \(q\) and then the disjunction of \(p \lor q\) with \(r\), or if we first take the disjunction of \(q\) and \(r\) and then take the disjunction of \(p\) with \(q \lor r\). Similarly, the expression \(p \land q \land r\) is well defined. By extending this reasoning, it follows that \(p_1 \lor p_2 \lor \cdots \lor p_n\) and \(p_1 \land p_2 \land \cdots \land p_n\) are well defined whenever \(p_1, p_2, \ldots, p_n\) are propositions.
+
+Furthermore, note that De Morgan's laws extend to
+\begin{equation*}
+    \lnot (p_1 \lor p_2 \lor \cdots p_n) \equiv (\lnot p_1 \land \lnot p_2 \land \cdots \land \lnot p_n)
+\end{equation*}
+and
+\begin{equation*}
+    \lnot (p_1 \land p_2 \land \cdots \land p_n) \equiv (\lnot p_1 \lor \lnot p_2 \lor \cdots \lor \lnot p_n)
+\end{equation*}
+
+We will sometimes use the notation \(\bigvee_{j = 1}^n p_j\) for \(p_1 \lor p_2 \lor \cdots \lor p_n\) and \(\bigvee_{j = 1}^n p_j\) for \(p_1 \land p_2 \land \cdots \land p_n\). Using this notation, the extended version of De Morgan's laws can be written concisely as \(\lnot \left(\bigvee_{j = 1}^n p_j\right) \equiv \bigwedge_{j = 1}^n \lnot p_j\) and \(\lnot\left(\bigwedge_{j = 1}^n p_j\right) \equiv \bigvee_{j = 1}^n \lnot p_j\). (Methods for proving these identities will be given in Section 5.1.)
+
+A truth table with \(2^n\) rows is needed to prove the equivalence of two compound propositions in \(n\) variables. (Note that the number of rows doubles for each additional propositional variable added. See Chapter 6 for details about solving counting problems such as this.) Because \(2^n\) grows extremely rapidly as \(n\) increases (see Section 3.2), the use of truth tables to establish equivalences becomes impractical as the number of variables grows. It is quicker to use other methods, such as employing logical equivalences that we already know. How that can be done is discussed later in this section.
+
+\printbibliography
+
+\end{document}

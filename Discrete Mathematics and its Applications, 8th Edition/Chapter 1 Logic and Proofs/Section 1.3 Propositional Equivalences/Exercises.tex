@@ -1,0 +1,203 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Exercises}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Exercises \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Exercise 1}
+Use truth tables to verify these equivalences.
+
+\begin{enumerate}
+    \item[\textbf{a)}] \(p \land \textbf{T} \equiv p\)
+    \item[\textbf{b)}] \(p \lor \textbf{F} \equiv p\)
+    \item[\textbf{c)}] \(p \land \textbf{F} \equiv \textbf{F}\)
+    \item[\textbf{d)}] \(p \lor \textbf{T} \equiv \textbf{T}\)
+    \item[\textbf{e)}] \(p \lor p \equiv p\)
+    \item[\textbf{f)}] \(p \land p \equiv p\)
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \textbf{T} & \(p \land \textbf{T}\) \\
+        T     & T          & T                      \\
+        F     & T          & F
+    \end{tabular}
+    \caption{Truth Table for 1(a)}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \textbf{F} & \(p \lor \textbf{F}\) \\
+        T     & F          & T                     \\
+        F     & F          & F
+    \end{tabular}
+    \caption{Truth Table for 1(b)}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \textbf{F} & \(p \land \textbf{F}\) \\
+        T     & F          & F                      \\
+        F     & F          & F
+    \end{tabular}
+    \caption{Truth Table for 1(c)}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \textbf{T} & \(p \lor \textbf{T}\) \\
+        T     & T          & T                     \\
+        F     & T          & T
+    \end{tabular}
+    \caption{Truth Table for 1(d)}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c}
+        \(p\) & \(p \lor p\) \\
+        T     & T            \\
+        F     & F
+    \end{tabular}
+    \caption{Truth Table for 1(e)}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c}
+        \(p\) & \(p \land p\) \\
+        T     & T             \\
+        F     & F
+    \end{tabular}
+    \caption{Truth Table for 1(f)}
+\end{table}
+
+\section*{Exercise 2}
+Show that \(\lnot(\lnot p)\) and \(p\) are logically equivalent
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(\lnot p\) & \(\lnot(\lnot p)\) \\
+        T     & F           & T                  \\
+        F     & T           & F
+    \end{tabular}
+    \caption{Truth Table for 2}
+\end{table}
+
+\section*{Exercise 3}
+Use truth tables to verify the commutative laws
+
+\begin{enumerate}
+    \item[\textbf{a)}] \(p \lor q \equiv q \lor p\)
+    \item[\textbf{b)}] \(p \land q \equiv q \land p\)
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        \(p\) & \(q\) & \(p \lor q\) & \(q \lor p\) \\
+        T     & T     & T            & T            \\
+        T     & F     & T            & T            \\
+        F     & T     & T            & T            \\
+        F     & F     & F            & F
+    \end{tabular}
+    \caption{Truth Table for 3(a)}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        \(p\) & \(q\) & \(p \land q\) & \(q \land p\) \\
+        T     & T     & T             & T             \\
+        T     & F     & F             & F             \\
+        F     & T     & F             & F             \\
+        F     & F     & F             & F
+    \end{tabular}
+    \caption{Truth Table for 3(b)}
+\end{table}
+
+\section*{Exercise 4}
+Use truth tables to verify the associative laws
+
+\begin{enumerate}
+    \item[\textbf{a)}] \((p \lor q) \lor r \equiv p \lor (q \lor r)\).
+    \item[\textbf{b)}] \((p \land q) \land r \equiv p \land (q \land r)\)
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \lor q\) & \((p \lor q) \lor r\) & \(q \lor r\) & \(p \lor (q \lor r)\) \\
+        T     & T     & T     & T            & T                     & T            & T                     \\
+        T     & T     & F     & T            & T                     & T            & T                     \\
+        T     & F     & T     & T            & T                     & T            & T                     \\
+        T     & F     & F     & T            & T                     & F            & T                     \\
+        F     & T     & T     & T            & T                     & T            & T                     \\
+        F     & T     & F     & T            & T                     & T            & T                     \\
+        F     & F     & T     & F            & T                     & T            & T                     \\
+        F     & F     & F     & F            & F                     & F            & F
+    \end{tabular}
+    \caption{Truth Table for 4(a)}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \land q\) & \((p \land q) \land r\) & \(q \land r\) & \(p \land (q \land r)\) \\
+        T     & T     & T     & T             & T                       & T             & T                       \\
+        T     & T     & F     & T             & F                       & F             & F                       \\
+        T     & F     & T     & F             & F                       & F             & F                       \\
+        T     & F     & F     & F             & F                       & F             & F                       \\
+        F     & T     & T     & F             & F                       & T             & F                       \\
+        F     & T     & F     & F             & F                       & F             & F                       \\
+        F     & F     & T     & F             & F                       & F             & F                       \\
+        F     & F     & F     & F             & F                       & F             & F
+    \end{tabular}
+    \caption{Truth Table for 4(b)}
+\end{table}
+
+\section*{Exercise 5}
+Use a truth table to verify the distributive law
+\begin{equation}
+    p \land (q \lor r) \equiv (p \land q) \lor (p \land r)
+\end{equation}
+
+\printbibliography
+
+\end{document}

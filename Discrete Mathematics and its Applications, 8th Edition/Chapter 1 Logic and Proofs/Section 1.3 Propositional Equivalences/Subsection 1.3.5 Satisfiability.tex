@@ -1,0 +1,45 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.5 Satisfiability}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.5 Satisfiability \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+A compound proposition is \textbf{satisfiable} if there is an assignment of truth values to its variables that makes it true (that is, when it is a tautology or a contingency). When no such assignments exists, that is, when the compound proposition is false for all assignments of truth values to its variables, the compound proposition is \textbf{unsatisfiable}. Note that a compound proposition is unsatisfiable if and only if its negation is true for all assignments of truth values to the variables, that is, if and only if its negation is a tautology.
+
+When we find a particular assignment of truth values that makes a compound proposition true, we have shown that it is satisfiable; such an assignment is called a \textbf{solution} of this particular satisfiability problem. However, to show that a compound proposition is unsatisfiable, we need to show that \textit{every} assignment of truth values to its variables makes it false. Although we can always use a truth table to determine whether a compound proposition is satisfiable, it is often more efficient not to, as Example \ref{Example: 9} demonstrates.
+
+\begin{example}\label{Example: 9}
+    Determine whether each of the compound propositions \((p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p)\), \((p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)\), and \((p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p) \land (p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)\) is satisfiable.
+
+    \noindent
+    \textbf{Solution:}
+    Instead of using a truth table to solve this problem, we will reason about truth values. Note that \((p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p)\) is true when the three variables \(p\), \(q\), and \(r\) have the same truth value (see Exercise 42 of Section 1.1). Hence, it is satisfiable as there is at least one assignment of truth values for \(p\), \(q\), and \(r\) that makes it true. Similarly, note that \((p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)\) is true when at least one of \(p\), \(q\), and \(r\) is true and at least one is false (see Exercise 43 of Section 1.1). Hence, \((p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)\) is satisfiable, as there is at least one assignment of truth values for \(p\), \(q\), and \(r\) that makes it true.
+
+    Finally, note that for \((p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p) \land (p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)\) to be true, \((p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p)\) and \((p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)\) must both be true. For the first to be true, the three variables must have the same truth values, and for the second to be true, at least one of the three variables must be true and at least one must be false. However, these conditions are contradictory. From these observations we conclude that no assignment of truth values to \(p\), \(q\), and \(r\) makes \((p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p) \land (p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)\) true. Hence, it is unsatisfiable.
+\end{example}
+
+\printbibliography
+
+\end{document}

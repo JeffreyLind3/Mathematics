@@ -1,0 +1,51 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.5 Precedence of Logical Operators}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.5 Precedence of Logical Operators \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+We can construct compound propositions using the negation and logical operators defined so far. We will generally use parentheses to specify the order in which logical operators in a compound proposition are applied. For instance, \((p \lor q) \land (\lnot r)\) is the conjunction of \(p \lor q\) and \(\lnot r\). However, to reduce the number of parentheses, we specify that the negation operator is applied before all other logical operators. This means that \(\lnot p \land q\) is the conjunction of \(\lnot p\) and \(q\), namely, \((\lnot p) \land q\), not the negation of the conjunction of \(p\) and \(q\), namely \(\lnot (p \land q)\). (It is generally the case that unary operators that involve only one object precede binary operators.)
+
+Another general rule of precedence is that the conjunction operator takes precedence over the disjunction operator so that \(p \lor q \land r\) means \(p \lor (q \land r)\) rather than \((p \lor q) \land r\) and \(p \land q \lor r\) means \((p \land q) \lor r\) rather than \(p \land (q \lor r)\). Because this rule may be difficult to remember, we will continue to use parentheses so that the order of the disjunction and conjunction operators is clear.
+
+Finally, it is an accepted rule that the conditional and biconditional operators, \(\to\) and \(\leftrightarrow\), have lower precedence than the conjunction and disjunction operators, \(\land\) and \(\lor\). Consequently, \(p \to q \lor r\) means \(p \to (q \lor r)\) rather than \((p \to q) \lor r\) and \(p \lor q \to r\) means \((p \lor q) \to r\) rather than \(p \lor (q \to r)\). We will use parenthesis when the order of the conditional operator and biconditional operator is at issue, although the conditional operator has precedence over the biconditional operator. Table \ref{Table: 8} displays the precedence levels of the logical operator, \(\lnot\), \(\land\), \(\lor\), \(\to\), and \(\leftrightarrow\).
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c}
+        \textit{Operator}   & \textit{Precedence} \\
+        \(\lnot\)           & 1                   \\
+        \(\land\)           & 2                   \\
+        \(\lor\)            & 3                   \\
+        \(\to\)             & 4                   \\
+        \(\leftrightarrow\) & 5
+    \end{tabular}
+    \caption{Precedence of Logical Operators.}
+    \label{Table: 8}
+\end{table}
+
+\printbibliography
+
+\end{document}

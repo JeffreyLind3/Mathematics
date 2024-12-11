@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.4 Constructing New Logical Equivalences}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.4 Constructing New Logical Equivalences \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+The logical equivalences in Table 6, as well as any others that have been established (such as those shown in Tables 7 and 8), can be used to construct additional logical equivalences. The reason for this is that a proposition in a compound proposition can be replaced by a compound proposition that is logically equivalent to it without changing the truth value of the original compound proposition. This technique is illustrated in Examples \ref{Example: 6}-\ref{Example: 8}, where we also use the fact that if \(p\) and \(q\) are logically equivalent and \(q\) and \(r\) are logically equivalent, then \(p\) and \(r\) are logically equivalent (see Exercise 60).
+
+\begin{example}\label{Example: 6}
+    Show that \(\lnot (p \to q)\) and \(p \land \lnot q\) are logically equivalent.
+
+    \noindent
+    \textbf{Solution:}
+    We could use a truth table to show that these compound propositions are equivalent (similar to what we did in Example 4. Indeed, it would not be hard to do so. However, we want to illustrate how to use logical identities that we already know to establish new logical identities, something that is of practical importance for establishing equivalences of compound propositions with a large number of variables. So, we will establish this equivalence by developing a series of logical equivalences, using one of the equivalences in Table 6 at a time, starting with \(\lnot (p \to q)\) and ending with \(p \land \lnot q\). We have the following equivalences.
+
+    \begin{gather*}
+        \lnot (p \to q) \equiv \lnot(\lnot p \lor q) \ \textbf{by the conditional-disjunction equivalence (Example 3)} \\
+        \equiv \lnot(\lnot p) \land \lnot q \ \textbf{by the second De Morgan law} \\
+        \equiv p \land \lnot q \ \textbf{by the double negation law}
+    \end{gather*}
+\end{example}
+
+\begin{example}
+    Show that \(\lnot (p \lor (\lnot p \land q))\) and \(\lnot p \land \lnot q\) are logically equivalent by developing a series of logical equivalences.
+
+    \noindent
+    \textbf{Solution:}
+    We will use one of the equivalences in Table 6 at a time, starting with \(\lnot (p \lor (\lnot p \land q))\) and ending with \(\lnot p \land \lnot q\). (\textit{Note:} we could also easily establish this equivalence using a truth table.) We have the following equivalences.
+
+    \begin{gather*}
+        \lnot (p \lor (\lnot p \land q)) \equiv \lnot p \land \lnot (\lnot p \land q) \ \textbf{by the second De Morgan law} \\
+        \equiv \lnot p \land [\lnot(\lnot p) \lor \lnot q] \ \textbf{by the first De Morgan law} \\
+        \equiv \lnot p \land (p \lor \lnot q) \ \textbf{by the double negation law} \\
+        \equiv (\lnot p \land p) \lor (\lnot p \land \lnot q) \ \textbf{by the second distributive law} \\
+        \equiv \textbf{F} \lor (\lnot p \land \lnot q) \ \textbf{because } \lnot p \land p \equiv \textbf{F} \\
+        \equiv (\lnot p \land \lnot q) \lor \textbf{F by the commutative law for disjunction} \\
+        \equiv \lnot p \land \lnot q \ \textbf{by the identity law for F}
+    \end{gather*}
+    Consequently \(\lnot (p \lor (\lnot p \land q))\) and \(\lnot p \land \lnot q\) are logically equivalent.
+\end{example}
+
+\begin{example}\label{Example: 8}
+    Show that \((p \land q) \to (p \lor q)\) is a tautology.
+
+    \noindent
+    \textbf{Solution}
+    To show that this statement is a tautology, we will use logical equivalences to demonstrate that it is logically equivalent to \textbf{T}. (\textit{Note:} This could also be done using a truth table.)
+
+    \begin{gather*}
+        (p \land q) \to (p \lor q) \equiv \lnot(p \land q) \lor (p \lor q) \ \textbf{by Example 3} \\
+        \equiv (\lnot p \lor \lnot q) \lor (p \lor q) \ \textbf{by the first De Morgan law} \\
+        \equiv (\lnot p \lor p) \lor (\lnot q \lor q) \ \textbf{by the associative and commutative laws for disjunction} \\
+        \equiv \textbf{T} \lor \textbf{T} \ \textbf{by Example 1 and the commutative law for disjunction} \\
+        \equiv \textbf{T by the domination}
+    \end{gather*}
+\end{example}
+
+\printbibliography
+
+\end{document}

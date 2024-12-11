@@ -1,0 +1,237 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.2 Propositions}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.2 Propositions \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+Our discussion begins with introducing the basic building blocks of logic - propositions. A \textbf{proposition} is a declarative sentence (that is, a sentence that declares a fact) that is either true or false, but not both.
+
+\begin{example}
+    All of the following declarative sentences are propositions.
+    \begin{enumerate}
+        \item Washington, D.C., is the capital of the United States of America.
+        \item Toronto is the capital of Canada.
+        \item \(1 + 1 = 2\).
+        \item \(2 + 2 = 3\).
+    \end{enumerate}
+    Propositions 1 and 3 are true, whereas 2 and 4 are false.
+\end{example}
+
+Some sentences that are not propositions are given in Example \ref{Example: 2}.
+
+\begin{example}\label{Example: 2}
+    Consider the following sentences
+    \begin{enumerate}
+        \item What time is it?
+        \item Read this carefully.
+        \item \(x + 1 = 2\).
+        \item \(x + y = z\).
+    \end{enumerate}
+    Sentences 1 and 2 are not propositions because they are not declarative sentences. Sentences 3 and 4 are not propositions because they are neither true nor false. Note that sentences 3 and 4 can be turned into a proposition if we assign values to the variables. We will also discuss other ways to turn sentences such as these into propositions in Section 1.4.
+\end{example}
+
+We use letters to denote \textbf{propositional variables} (or \textbf{sentential variables}), that is, variables that represent propositions, just as letters are used to denote numerical variables. The conventional letters used for propositional variables are \(p, q, r, s, \ldots\). The \textbf{truth value} of a proposition is true, denoted by T, if it is a true proposition, and the truth value of a proposition is false, denoted by F, if it is a false proposition. Propositions that cannot be expressed in terms of simpler propositions are called \textbf{atomic propositions}.
+
+The area of logic that deals with propositions is called the \textbf{propositional calculus} or \textbf{propositional logic}. It was first developed systematically by the Greek philosopher Aristotle more than 2300 years ago.
+
+We now focus on methods for producing new propositions from those we already have. These methods were discussed by the English mathematician George Boole in 1854 in his book \textit{The Laws of Thought}. Many mathematical statements are constructed by combining one or more propositions. New propositions, called \textbf{compound propositions}, are formed from existing propositions using \textbf{logical operators}.
+
+\begin{definition}
+    Let \(p\) be a proposition. The \textit{negation of} \(p\), denoted by \(\lnot p\) (also denoted by \(\overline{p}\)), is the statement
+    \begin{center}
+        \textit{"It is not the case that} \(p\)"
+    \end{center}
+    The proposition \(\lnot p\) is read "not \(p\)." The truth value of the negation of \(p\), \(\lnot p\), is the opposite of the truth value of \(p\).
+\end{definition}
+
+\textbf{\textit{Remark:}} The notation for the negation operator is not standardized. Although \(\lnot p\) and \(\overline{p}\) are the most common notations used in mathematics to express the negation of \(p\), other notations you might see are \(\sim p\), \(-p\), \(p'\), N\(p\), and \(!p\).
+
+\begin{example}
+    Find the negation of the proposition
+    \begin{center}
+        "Michael's PC runs Linux"
+    \end{center}
+    and express this in simple English.
+
+    \noindent
+    \textbf{Solution:}
+    The negation is
+    \begin{center}
+        "It is not the case that Michael's PC runs Linux."
+    \end{center}
+    This negation can be more simply expressed as
+    \begin{center}
+        "Michael's PC does not run Linux."
+    \end{center}
+\end{example}
+
+\begin{example}
+    Find the negation of the proposition
+    \begin{center}
+        "Vandana's smartphone has at least 32 GB of memory"
+    \end{center}
+    and express this in simple English.
+
+    \noindent
+    \textbf{Solution:}
+    The negation is
+    \begin{center}
+        "It is not the case that Vandana's smartphone has at least 32 GB of memory."
+    \end{center}
+    This negation can also be expressed as
+    \begin{center}
+        "Vandana's smartphone does not have at least 32 GB of memory"
+    \end{center}
+    or even more simply as
+    \begin{center}
+        "Vandana's smartphone has less than 32 GB of memory."
+    \end{center}
+\end{example}
+
+Table \ref{Table: 1} displays the \textbf{truth table} for the negation of a proposition \(p\). This table has a row for the two possible truth values of \(p\). Each row shows the truth value of \(\lnot p\) corresponding to the truth value of \(p\) for this row.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c}
+        \(p\) & \(\lnot p\) \\
+        T     & F\\
+        F     & T
+    \end{tabular}
+    \caption{The Truth Table for the Negation of a Proposition.}
+    \label{Table: 1}
+\end{table}
+
+The negation of a proposition can also be considered the result of the operation of the \textbf{negation operator} on a proposition. The negation operator constructs a new proposition from a single existing proposition. We will now introduce the logical operators used to form new propositions from two or more existing propositions. These logical operators are also called \textbf{connectives}.
+
+\begin{definition}
+    Let \(p\) and \(q\) be propositions. The \textit{conjunction} of \(p\) and \(q\), denoted by \(p \land q\), is the proposition "\(p\) and \(q\)." The conjunction \(p \land q\) is true when both \(p\) and \(q\) are true and is false otherwise.
+\end{definition}
+
+Table \ref{Table: 2} displays the truth table of \(p \land q\). This table has a row for the four possible combinations of truth values of \(p\) and \(q\). The four rows correspond to the pairs of truth values TT, TF, FT, and FF, where the first truth value in the pair is the truth value of \(p\), and the second is the truth value of \(q\).
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(q\) & \(p \land q\)\\
+        T     & T     & T\\
+        T     & F     & F\\
+        F     & T     & F\\
+        F     & F     & F
+    \end{tabular}
+    \caption{The Truth Table for the Conjunction of Two Propositions.}
+    \label{Table: 2}
+\end{table}
+
+In logic, the word "but" is sometimes used instead of "and" in a conjunction. For example, "The sun is shining, but it is raining" is another way of saying, "The sun is shining, and it is raining." (In natural language, there is a subtle difference in meaning between "and" and "but"; we will not be concerned with this nuance here.)
+
+\begin{example}\label{Example: 5}
+    Find the conjunction of the propositions \(p\) and \(q\) where \(p\) is the proposition "Rebecca's PC has more than 16 GB free hard disk space" and \(q\) is the proposition "The processor in Rebecca's PC runs faster than 1 GHz."
+
+    \noindent
+    \textbf{Solution:}
+    The conjunction of these propositions, \(p \land q\), is the proposition "Rebecca's PC has more than 16 GB free hard disk space, and the processor in Rebecca's PC runs faster than 1 GHz." This conjunction can be expressed more simply: "Rebecca's PC has more than 16 GB free hard disk space, and its processor runs faster than 1 GHz." For this conjunction to be true, both conditions given must be true. It is false when one or both of these conditions are false.
+\end{example}
+
+\begin{definition}
+    Let \(p\) and \(q\) be propositions. The \textit{disjunction} of \(p\) and \(q\), denoted by \(p \lor q\), is the proposition "\(p\) or \(q\)." The disjunction \(p \lor q\) is false when both \(p\) and \(q\) are false and is true otherwise.
+\end{definition}
+
+Table \ref{Table: 3} displays the truth table for \(p \lor q\).
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(q\) & \(p \lor q\)\\
+        T     & T     & T\\
+        T     & F     & T\\
+        F     & T     & T\\
+        F     & F     & F
+    \end{tabular}
+    \caption{The Truth Table for the Disjunction of Two Propositions.}
+    \label{Table: 3}
+\end{table}
+
+The use of the connective \textit{or} in a disjunction corresponds to one of the two ways the word \textit{or} is used in English, namely, as an \textbf{inclusive or}. A disjunction is true when at least one of the two propositions is true. That is, \(p \lor q\) is true when both \(p\) and \(q\) are true or when exactly one of \(p\) and \(q\) is true.
+
+\begin{example}
+    Translate the statement "Students who have taken calculus or introductory computer science can take this class" in a statement in propositional logic using the propositions \(p\): "A student who has taken calculus can take this class" and \(q\): "A student who has taken introductory computer science can take this class."
+
+    \noindent
+    \textbf{Solution:}
+    We assume that this statement means that students who have taken both calculus and introductory computer science can take this class and have taken only one of the two subjects. Hence, this statement can be expressed as \(p \lor q\), the inclusive or, or disjunction, of \(p\) and \(q\).
+\end{example}
+
+\begin{example}
+    What is the disjunction of the propositions \(p\) and \(q\), where \(p\) and \(q\) are the same propositions as in Example \ref{Example: 5}?
+
+    \noindent
+    \textbf{Solution:}
+    The disjunction of \(p\) and \(q\), \(p \lor q\), is the proposition
+    \begin{center}
+        "Rebecca's PC has at least 16 GB free hard disk space, or the processor in Rebecca's PC runs faster than 1 GHz."
+    \end{center}
+    This proposition is true when Rebecca's PC has at least 16 GB of free hard disk space, when the PC's processor runs faster than 1 GHz, and when both conditions are true. It is false when both of these conditions are false, that is, when Rebecca's PC has less than 16 GB free hard disk space and the processor in her PC runs at 1 GHz or slower.
+\end{example}
+
+Besides its use in disjunctions, the connective \textit{or} is also used to express an \textit{exclusive or}. Unlike the disjunction of two propositions \(p\) and \(q\), the exclusive or of these two propositions is true when exactly one of \(p\) and \(q\) is true; it is false when both \(p\) and \(q\) are true (and when both are false).
+
+\begin{definition}
+    Let \(p\) and \(q\) be propositions. The \textit{exclusive or} of \(p\) and \(q\), denoted by \(p \oplus q\) (or \(p\) XOR \(q\)), is the proposition that is true when exactly one of \(p\) and \(q\) is true and is false otherwise.
+\end{definition}
+
+The truth table for the exclusive or of two propositions is displayed in Table \ref{Table: 4}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(q\) & \(p \oplus q\)\\
+        T     & T     & F\\
+        T     & F     & T\\
+        F     & T     & T\\
+        F     & F     & F
+    \end{tabular}
+    \caption{The Truth Table for the Exclusive Or of Two Propositions.}
+    \label{Table: 4}
+\end{table}
+
+\begin{example}
+    Let \(p\) and \(q\) be the propositions that state "A student can have a salad with dinner" and "A student can have soup with dinner," respectively. What is \(p \oplus q\), the exclusive or of \(p\) and \(q\)?
+
+    \noindent
+    \textbf{Solution:}
+    The exclusive or of \(p\) and \(q\) is the statement that is true when exactly one of \(p\) and \(q\) is true. That is, \(p \oplus q\) is the statement "A student can have a soup or salad, but not both, with dinner." This is often stated as "A student can have soup or a salad with dinner," without explicitly stating that taking both is prohibited.
+\end{example}
+
+\begin{example}
+    Express the statement "I will use all my savings to travel to Europe or to buy an electric car" in propositional logic using the statement \(p\): "I will use all my savings to travel to Europe" and the statement \(q\): "I will use all my savings to buy an electric car."
+
+    \noindent
+    \textbf{Solution:}
+    To translate this statement, we first note that the or in this statement must be an exclusive or because this student can either use all his or her savings to travel to Europe or use all these savings to buy an electric car, but cannot both go to Europe and buy an electric car. (This is clear because either option requires all his savings.) Hence, this statement can be expressed as \(p \oplus q\).
+\end{example}
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.3 Conditional Statements}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.1 Propositional Logic - Subsection 1.1.3 Conditional Statements \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+We will discuss several other important ways in which propositions can be combined.
+
+\begin{definition}
+    Let \(p\) and \(q\) be propositions. The \textit{conditional statement} \(p \to q\) is the proposition "if \(p\), then \(q\)." The conditional statement \(p \to q\) is false when \(p\) is true and \(q\) is false, and true otherwise. In the conditional statement \(p \to q\), \(p\) is called the \textit{hypothesis} (or \textit{antecedent} or \textit{premise}) and \(q\) is called the \textit{conclusion} (or \textit{consequence}).
+\end{definition}
+
+The statement \(p \to q\) is called a conditional statement because \(p \to q\) asserts that \(q\) is true on the condition that \(p\) holds. A conditional statement is also called an \textbf{implication}.
+
+The truth table for the conditional statement \(p \to q\) is shown in Table \ref{Table: 5}. Note that the statement \(p \to q\) is true when both \(p\) and \(q\) are true and when \(p\) is false (no matter what truth value \(q\) has).
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(q\) & \(p \to q\) \\
+        T     & T     & T \\
+        T     & F     & F \\
+        F     & T     & T \\
+        F     & F     & F \\
+    \end{tabular}
+    \caption{The Truth Table for the Conditional Statement \(p \to q\)}
+    \label{Table: 5}
+\end{table}
+
+Because conditional statements are essential in mathematical reasoning, various terminology is used to express \(p \to q\). You will encounter most, if not all, of the following ways to express this conditional statement:
+
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{cc}
+        "if \(p\), then \(q\)"                     & "\(p\) implies \(q\)"                       \\
+        "if \(p\), \(q\)"                          & "\(p\) only if \(q\)"                       \\
+        "\(p\) is sufficient for \(q\)"            & "a sufficient condition for \(q\) is \(p\)" \\
+        "\(q\) if \(p\)"                           & "\(q\) whenever \(p\)"                      \\
+        "\(q\) when \(p\)"                         & "\(q\) is necessary for \(p\)"              \\
+        "a necessary condition for \(p\) is \(q\)" & "\(q\) follows from \(p\)"                  \\
+        "\(q\) unless \(\lnot p\)"                 & "\(q\) provided that \(p\)"                 \\
+    \end{tabular}
+\end{table*}
+
+A useful way to understand the truth value of a conditional statement is to think of an obligation or a contract. For example, the pledge many politicians make when running for office is
+\begin{center}
+    "If I am elected, then I will lower taxes."
+\end{center}
+If the politician is elected, voters would expect this politician to lower taxes. Furthermore, if the politician is not elected, voters will not expect this person to lower taxes. However, the person may have sufficient influence to cause those in power to lower taxes. Only when the politician is elected but does not lower taxes can voters say that the politician has broken the campaign pledge. This last scenario corresponds to the case when \(p\) is true but \(q\) is false in \(p \to q\).
+
+Similarly, consider a statement that a professor might make:
+\begin{center}
+    "If you get 100\% on the final, then you will get an A."
+\end{center}
+If you manage to get 100\% on the final, you would expect to receive an A. If you do not get 100\%, you may or may not receive an A, depending on other factors. However, if you do get 100\%, but the professor does not give you an A, you will feel cheated.
+
+\textbf{\textit{Remark:}} Because some of the different ways to express the implication \(p\) implies \(q\) can be confusing, we will provide some extra guidance. To remember that "\(p\) only if \(q\)" expresses the same thing as "if \(p\), then \(q\)," note that "\(p\) only if \(q\)" says that \(p\) cannot be true when \(q\) is not true. That is, the statement is false if \(p\) is true, but \(q\) is false. When \(p\) is false, \(q\) may be either true or false because the statement says nothing about the truth value of \(q\).
+
+For example, suppose your professor tells you
+\begin{center}
+    "You can receive an A in the course only if your score on the final is at least 90\%."
+\end{center}
+
+Then, if you receive an A in the course, you know that your score on the final is at least 90\%. If you do not receive an A, you may or may not have scored at least 90\% on the final. Be careful not to use "\(q\) only if \(p\)" to express \(p \to q\) because this is incorrect. The word "only" plays an essential role here. To see this, note that the truth values of "q only if p" and \(p \to q\) are different when \(p\) and \(q\) have different truth values. To see why "\(q\) is necessary for \(p\)" is equivalent to "if \(p\), then \(q\)", observe that "\(q\) is necessary for \(p\)" means that \(p\) cannot be true unless \(q\) is true, or that if \(q\) is false, then \(p\) is false. This is the same as saying that if \(p\) is true, then \(q\) is true. To see why "\(p\) is sufficient for \(q\)" is equivalent to "if \(p\), then \(q\)," note that "\(p\) is sufficient for \(q\)" means if \(p\) is true, it must be the case that \(q\) is also true. This is the same as saying that if \(p\) is true, then \(q\) is also true.
+
+To remember that "\(q\) unless \(\lnot p\)" expresses the same conditional statement as "if \(p\), then \(q\)," note that "\(q\) unless \(\lnot p\)" means that if \(\lnot p\) is false, then \(q\) must be true. That is, the statement "\(q\) unless \(\lnot p\)" is false when \(p\) is true but \(q\) is false, but it is true otherwise. Consequently, "\(q\) unless \(\lnot p\)" and \(p \to q\) always have the same truth value.
+
+We illustrate the translation between conditional and English statements in Example \ref{Example: 10}.
+
+\begin{example}\label{Example: 10}
+    Let \(p\) be the statement "Maria learns discrete mathematics" and \(q\) the statement "Maria will find a good job." Express the statement \(p \to q\) as a statement in English.
+
+    \noindent
+    \textbf{Solution}:
+    From the definition of conditional statements, we see that when \(p\) is the statement "Maria learns discrete mathematics" and \(q\) is the statement "Maria will find a good job," \(p \to q\) represents the statement
+    \begin{center}
+        If Maria learns discrete mathematics, then she will find a good job."
+    \end{center}
+    There are many other ways to express this conditional statement in English. Among the most natural of these are
+    \begin{center}
+        "Maria will find a good job when she learns discrete mathematics."
+    \end{center}
+    \begin{center}
+        "For Maria to get a good job, it is sufficient for her to learn discrete mathematics."
+    \end{center}
+    and
+    \begin{center}
+        "Maria will find a good job unless she does not learn discrete mathematics."
+    \end{center}
+\end{example}
+
+Note that the way we have defined conditional statements is more general than the meaning attached to such statements in English. For instance, the conditional statement in Example \ref{Example: 10} and the statement
+\begin{center}
+    "If it is sunny, then we will go to the beach"
+\end{center}
+are statements in normal language with a relationship between the hypothesis and the conclusion. Further, the first of these statements is true unless Maria learns discrete mathematics, but she does not get a good job, and the second is true unless it is indeed sunny, but we do not go to the beach. On the other hand, the statement
+\begin{center}
+    "If Juan has a smartphone, then \(2 + 3 = 5\)"
+\end{center}
+is true from the definition of a conditional statement because its conclusion is true. (The truth value of the hypothesis does not matter then.) The conditional statement
+\begin{center}
+    "If Juan has a smartphone, then \(2 + 3 = 6\)"
+\end{center}
+is true if Juan does not have a smartphone, even though \(2 + 3 = 6\) is false. We would not use these last two conditional statements in natural language (except perhaps in sarcasm) because neither statement has a relationship between the hypothesis and the conclusion. In mathematical reasoning, we consider conditional statements of a more general sort than we use in English. The mathematical concept of a conditional statement is independent of a cause-and-effect relationship between the hypothesis and the conclusion. Our definition of a conditional statement specifies its truth values; it is not based on English usage. Propositional language is an artificial language; we only parallel English usage to make it easy to use and remember.
+
+The if-then construction used in many programming languages differs from that used in logic. Most programming languages contain statements such as \textbf{if} \(p\) \textbf{then} \(S\), where \(p\) is a proposition and \(S\) is a program segment (one or more statements to be executed). (Although this looks as if it might be a conditional statement, \(S\) is not a proposition but rather is a set of executable instructions.) When execution of a program encounters such a statement, \(S\) is executed if \(p\) is true, but \(S\) is not executed if \(p\) is false, as illustrated in Example \ref{Example: 11}.
+
+\begin{example}\label{Example: 11}
+    What is the value of the variable \(x\) after the statement
+    \begin{center}
+        \textbf{if} \(2 + 2 = 4\) \textbf{then} \(x \coloneq x + 1\)
+    \end{center}
+    if \(x = 0\) before this statement is encountered? (The symbol \(\coloneq\) stands for assignment. The statement \(x \coloneq x + 1\) means the assignment of the value of \(x + 1\) to \(x\).)
+    
+    \noindent
+    \textbf{Solution:} Because \(2 + 2 = 4\) is true, the assignment statement \(x \coloneq x + 1\) is executed. Hence, \(x\) has the value \(0 + 1 = 1\) after this statement is encountered.
+\end{example}
+
+\section{Converse, Contrapositive, and Inverse}
+We can form new conditional statements starting with a conditional statement \(p \to q\). In particular, three related conditional statements occur so often that they have special names. The proposition \(q \to p\) is called the \textbf{converse} of \(p \to q\). The \textbf{contrapositive} of \(p \to q\) is the proposition \(\lnot q \to \lnot p\). The proposition \(\lnot p \to \lnot q\) is called the \textbf{inverse} of \(p \to q\). We will see that of these three conditional statements formed from \(p \to q\), only the contrapositive always has the same truth value as \(p \to q\).
+
+We first show that the contrapositive, \(\lnot q \to \lnot p\), of a conditional statement \(p \to q\) always has the same truth value as \(p \to q\). To see this, note that the contrapositive is false only when \(\lnot p\) is false and \(\lnot q\) is true, that is, only when \(p\) is true and \(q\) is false. We now show that neither the converse, \(q \to p\) nor the inverse, \(\lnot p \to \lnot q\), has the same truth value as \(p \to q\) for all possible truth values of \(p\) and \(q\). Note that when \(p\) is true and \(q\) is false, the original conditional statement is false, but the converse and the inverse are both true.
+
+When two compound propositions always have the same truth values, regardless of the truth values of their propositional variables, we call them \textbf{equivalent}. Hence, a conditional statement and its contrapositive are equivalent. The converse and the inverse of a conditional statement are also equivalent, as the reader can verify, but neither is equivalent to the original conditional statement. (We will study equivalent propositions in Section 1.3.) One of the most common logical errors is assuming that the converse or the inverse of a conditional statement is equivalent to this conditional statement.
+
+We illustrate the use of conditional statements in Example \ref{Example: 12}
+
+\begin{example}\label{Example: 12}
+    Find the contrapositive, the converse, and the inverse of the conditional statement
+    \begin{center}
+        "The home team wins whenever it is raining."
+    \end{center}
+
+    \noindent
+    \textbf{Solution:}
+    Because "\(q\) whenever \(p\)" is one of the ways to express the conditional statement \(p \to q\), the original statement can be rewritten as
+    \begin{center}
+        "If it is raining, then the home team wins."
+    \end{center}
+    Consequently, the contrapositive of this conditional statement is
+    \begin{center}
+        "If the home team does not win, then it is not raining."
+    \end{center}
+    The converse is
+    \begin{center}
+        "If the home team wins, then it is raining."
+    \end{center}
+    The inverse is
+    \begin{center}
+        "If it is not raining, then the home team does not win."
+    \end{center}
+    Only the contrapositive is equivalent to the original statement.
+\end{example}
+
+\section{Biconditionals}
+We now introduce another way to combine propositions, which expresses that two propositions have the same truth value.
+
+\begin{definition}
+    Let \(p\) and \(q\) be propositions. The \textit{biconditional statement} \(p \leftrightarrow q\) is the proposition "\(p\) if and only if \(q\)." The biconditional statement \(p \leftrightarrow q\) is true when \(p\) and \(q\) have the same truth values and is false otherwise. Biconditional statements are also called \textit{bi-implications}.
+\end{definition}
+
+The truth table for \(p \leftrightarrow q\) is shown in Table \ref{Table: 6}. Note that the statement \(p \leftrightarrow q\) is true when both the conditional statements \(p \to q\) and \(q \to p\) are true and is false otherwise. That is why we use the words "if and only if" to express this logical connective and why it is symbolically written by combining the symbols \(\to\) and \(\leftarrow\). There are some other common ways to express \(p \leftrightarrow q\):
+
+"\(p\) is necessary and sufficient for \(q\)"
+
+"if \(p\) then \(q\), and conversely"
+
+"\(p\) iff \(q\)." "\(p\) exactly when \(q\)."
+
+The last way of expressing the biconditional statement \(p \leftrightarrow q\) uses the abbreviation "iff" for "if and only if." Note that \(p \leftrightarrow q\) has the same truth value as \((p \to q) \land (q \to p)\).
+
+\begin{table}
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(q\) & \(p \leftrightarrow q\) \\
+        T     & T     & T \\
+        T     & F     & F \\
+        F     & T     & F \\
+        F     & F     & T \\
+    \end{tabular}
+    \caption{The Truth Table for the Biconditional \(p \leftrightarrow q\)}
+    \label{Table: 6}
+\end{table}
+
+\begin{example}
+    Let \(p\) be the statement "You can take the flight," and let \(q\) be the statement "You buy a ticket." Then \(p \leftrightarrow q\) is the statement
+    \begin{center}
+        "You can take the flight if and only if you buy a ticket."
+    \end{center}
+    This statement is true if \(p\) and \(q\) are either both true or both false, that is, if you buy a ticket and can take the flight or if you do not buy a ticket and you cannot take the flight. It is false when \(p\) and \(q\) have opposite truth values, that is when you do not buy a ticket, but you can take the flight (such as when you get a free trip) and when you buy a ticket but you cannot take the flight (such as when the airline bumps you).
+\end{example}
+
+\section{Implicit Use of Biconditionals}
+You should be aware that biconditionals are not always explicit in natural language. In particular, the "if and only if" construction used in biconditionals is rarely used in common language. Instead, biconditionals are often expressed using an "if, then" or an "only if" construction. The other part of the "if and only if" is implicit. That is, the converse is implied but not stated. For example, consider the statement in English: "If you finish your meal, then you can have dessert." What is meant is, "You can have dessert if and only if you finish your meal." This last statement is logically equivalent to the two statements "If you finish your meal, then you can have dessert" and "You can have dessert only if you finish your meal." Because of this imprecision in natural language, we must assume whether a conditional statement in natural language implicitly includes its converse. Because precision is essential in mathematics and logic, we will always distinguish between the conditional statement \(p \to q\) and the biconditional statement \(p \leftrightarrow q\).
+
+\printbibliography
+
+\end{document}

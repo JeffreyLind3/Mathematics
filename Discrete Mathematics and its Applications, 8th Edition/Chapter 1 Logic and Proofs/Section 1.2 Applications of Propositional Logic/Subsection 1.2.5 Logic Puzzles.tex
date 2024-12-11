@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.2 Applications of Propositional Logic - Subsection 1.2.5 Logic Puzzles}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.2 Applications of Propositional Logic - Subsection 1.2.5 Logic Puzzles \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+Puzzles that can be solved using logical reasoning are known as \textbf{logic puzzles}. Solving logic puzzles is an excellent way to practice working with the rules of logic. Also, computer programs designed to carry out logical reasoning often use well-known logical puzzles to illustrate their capabilities. Many people enjoy solving logic puzzles, published in periodicals, books, and on the Web, as a recreational activity.
+
+The next three examples present logic puzzles, in increasing level of difficulty. Many others can be found in the exercises. In Section 1.3 we will discuss the \(n\)-queens puzzle and the game of Sudoku.
+
+\begin{example}
+    As a reward for saving his daughter from pirates, the King has given you the opportunity to win a treasure hidden inside one of three trunks. The two trunks that do not hold the treasure are empty. To win, you must select the correct trunk. Trunks \(1\) and \(2\) are each inscribed with the message "This trunk is empty," and Trunk \(3\) is inscribed with the message "The treasure is in Trunk \(2\)." The Queen, who never lies, tells you that only one of these inscriptions is true, while the other two are wrong. Which trunk should you select to win?
+
+    \noindent
+    \textbf{Solution:}
+    Let \(p_i\) be the proposition that the treasure is in Trunk \(i\), for \(i = 1, 2, 3\). To translate into propositional logic the Queen's statement that exactly one of the inscriptions is true, we observe that the inscriptions on Trunk \(1\), Trunk \(2\), and Trunk \(3\), are \(\lnot p_1\), \(\lnot p_2\), and \(p_2\), respectively. So, her statement can be translated to
+    \begin{equation}
+        (\lnot p_1 \land \lnot(\lnot p_2) \land \lnot p_2) \lor (\lnot(\lnot p_1) \land \lnot p_2 \land \lnot p_2) \lor (\lnot(\lnot p_1) \land \lnot(\lnot p_2) \land p_2).
+    \end{equation}
+    Using the rules for propositional logic, we see that this is equivalent to \((p_1 \land \lnot p_2) \lor (p_1 \land p_2)\). By the distributive law, \((p_1 \land \lnot p_2) \lor (p_1 \land p_2)\) is equivalent to \(p_1 \land (\lnot p_2 \lor p_2)\). But because \(\lnot p_2 \lor p_2\) must be true, this is then equivalent to \(p_1 \land \textbf{T}\), which is in turn equivalent to \(p_1\). So the treasure is in Trunk \(1\) (that is, \(p_1\) is true), and \(p_2\) and \(p_3\) are false; and the inscription on Trunk \(2\) is the only true one. (Here, we have used the concept of propositional equivalence, which is discussed in Section 1.3.)
+\end{example}
+
+Next, we introduce a puzzle originally posed by Raymond Smullyan, a master of logic puzzles, who has published more than a dozen books containing challenging puzzles that involve logical reasoning.
+
+\begin{example}
+    In [SM78] Smullyan posed many puzzles about an island that has two kinds of inhabitants, knights, who always tell the truth, and their opposites, knaves, who always lie. You encounter two people \(A\) and \(B\). What are \(A\) and \(B\) if \(A\) says "\(B\) is a knight" and \(B\) says "The two of us are opposite types"?
+
+    \noindent
+    \textbf{Solution:}
+    Let \(p\) and \(q\) be the statements that \(A\) is a knight and \(B\) is a knight, respectively, so that \(\lnot p\) and \(\lnot q\) are the statements that \(A\) is a knave and \(B\) is a knave, respectively.
+
+    We first consider the possibility that \(A\) is a knight; this is the statement that \(p\) is true. If \(A\) is a knight, then he is telling the truth when he says that \(B\) is a knight, so that \(q\) is true, and \(A\) and \(B\) are the same type. However, if \(B\) is a knight, then  \(B\)'s statement that \(A\) and \(B\) are of opposite types, the statement \((p \land \lnot q) \lor (\lnot p \land q)\), would have to be true, which it is not, because \(A\) and \(B\) are both knights. Consequently, we can conclude that \(A\) is not a knight, that is, that \(p\) is false.
+
+    If \(A\) is a knave, then because everything a knave says is false, \(A\)'s statement that \(B\) is a knight, that is, that \(q\) is true, is a lie. This means that \(q\) is false and \(B\) is also a knave. Furthermore, if \(B\) is a knave, then \(B\)'s statement that \(A\) and \(B\) are of opposite types is a lie, which is consistent with both \(A\) and \(B\) being knaves. We can conclude that both \(A\) and \(B\) are knaves.
+\end{example}
+
+We pose more of Smullyan's puzzles about knights and knaves in Exercises 23-27. In Exercises 28-35 we introduce related puzzles where we have three types of people, knights and knaves as in this puzzle together with spies who can lie.
+
+Next, we pose a puzzle known as the \textbf{muddy children puzzle} for the case of two children.
+
+\begin{example}
+    A father tells his two children, a boy and a girl, to play in their backyard without getting dirty. However, while playing, both children get mud on their foreheads. When the children stop playing, the father says "At least one of you has a muddy forehead," and then asks the children to answer "Yes" or "No" to the question: "Do you know whether you have a muddy forehead?" The father asks this question twice. What will the children answer each time this question is asked, assuming that a child can see whether his or her sibling has a muddy forehead, but cannot see his or her own forehead? Assume that both children are honest and that the children answer each question simultaneously.
+
+    \noindent
+    \textbf{Solution:}
+    Let \(s\) be the statement that the son has a muddy forehead and let \(d\) be the statement that the daughter has a muddy forehead. When the father says that at least one of the two children has a muddy forehead, he is stating that the disjunction \(s \lor d\) is true. Both children will answer "No" the first time the question is asked because each sees mud on the other child's forehead. That is, the son knows that \(d\) is true, but does not know whether \(s\) is true, and the daughter knows that \(s\) is true, but does not know whether \(d\) is true.
+
+    After the son has answered "No" to the first question, the daughter can determine that \(d\) must be true. This follows because when the first question is asked, the son knows that \(s \lor d\) is true, but cannot determine whether \(s\) is true. Using this information, the daughter can conclude that \(d\) must be true, for if \(d\) were false, the son could have reasoned that because \(s \lor d\) is true, then \(s\) must be true, and he would have answered "Yes" to the first question. The son can reason in a similar way to determine that \(s\) must be true. It follows that both children answer "Yes" the second time the question is asked.
+\end{example}
+
+\printbibliography
+
+\end{document}

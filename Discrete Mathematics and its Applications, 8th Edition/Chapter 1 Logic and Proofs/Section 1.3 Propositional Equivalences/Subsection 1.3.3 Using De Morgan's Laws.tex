@@ -1,0 +1,43 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.3 Using De Morgan's Laws}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.dev}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.3 Propositional Equivalences - Subsection 1.3.3 Using De Morgan's Laws \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+The two logical equivalences known as De Morgan's laws are particularly important. They tell us how to negate conjunctions and how to negate disjunctions. In particular, the equivalence \(\lnot (p \lor q) \equiv \lnot p \land \lnot q\) tells us that the negation of a disjunction is formed by taking the conjunction of the negations of the component propositions. Similarly, the equivalence \(\lnot(p \land q) \equiv \lnot p \lor \lnot q\) tells us that the negation of a conjunction is formed by taking the disjunction of the negations of the component propositions. Example \ref{Example: 5} illustrates the use of De Morgan's laws.
+
+\begin{example}\label{Example: 5}
+    Use De Morgan's laws to express the negations of "Miguel has a cellphone and he has a laptop computer" and "Heather will go to the concert or Steve will go to the concert."
+
+    \noindent
+    \textbf{Solution:}
+    Let \(p\) be "Miguel has a cellphone" and \(q\) be "Miguel has a laptop computer." Then "Miguel has a cellphone and he has a laptop computer" can be represented by \(p \land q\). By the first of De Morgan's laws, \(\lnot (p \land q)\) is equivalent to \(\lnot p \lor \lnot q\). Consequently, we can express the negation of our original statement as "Miguel does not have a cellphone or he does not have a laptop computer."
+
+    Let \(r\) be "Heather will go to the concert" and \(s\) be "Steve will go to the concert." Then "Heather will go to the concert or Steve will go to the concert" can be represented by \(r \lor s\). By the second of De Morgan's laws, \(\lnot (r \lor s)\) is equivalent to \(\lnot r \land \lnot s\). Consequently, we can express the negation of our original statement as "Heather will not go to the concert and Steve will not go to the concert."
+\end{example}
+
+\printbibliography
+
+\end{document}
