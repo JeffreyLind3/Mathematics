@@ -811,6 +811,124 @@ Show that \((p \to q) \land (p \to r)\) and \(p \to (q \land r)\) are logically 
     \caption{Truth Table for 26}
 \end{table}
 
+\section*{Exercise 27}
+Show that \((p \to r) \land (q \to r)\) and \((p \lor q) \to r\) are logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \to r\) & \(q \to r\) & \((p \to r) \land (q \to r)\) & \(p \lor q\) & \((p \lor q) \to r\) \\
+        T     & T     & T     & T           & T           & T                             & T            & T                    \\
+        T     & T     & F     & F           & F           & F                             & T            & F                    \\
+        T     & F     & T     & T           & T           & T                             & T            & T                    \\
+        T     & F     & F     & F           & T           & F                             & T            & F                    \\
+        F     & T     & T     & T           & T           & T                             & T            & T                    \\
+        F     & T     & F     & T           & F           & F                             & T            & F                    \\
+        F     & F     & T     & T           & T           & T                             & F            & T                    \\
+        F     & F     & F     & T           & T           & T                             & F            & T
+    \end{tabular}
+    \caption{Truth Table for 27}
+\end{table}
+
+\section*{Exercise 28}
+Show that \((p \to q) \lor (p \to r)\) and \(p \to (q \lor r)\) are logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \to q\) & \(p \to r\) & \((p \to q) \lor (p \to r)\) & \(q \lor r\) & \(p \to (q \lor r)\) \\
+        T     & T     & T     & T           & T           & T                            & T            & T                    \\
+        T     & T     & F     & T           & F           & T                            & T            & T                    \\
+        T     & F     & T     & F           & T           & T                            & T            & T                    \\
+        T     & F     & F     & F           & F           & F                            & F            & F                    \\
+        F     & T     & T     & T           & T           & T                            & T            & T                    \\
+        F     & T     & F     & T           & T           & T                            & T            & T                    \\
+        F     & F     & T     & T           & T           & T                            & T            & T                    \\
+        F     & F     & F     & T           & T           & T                            & F            & T
+    \end{tabular}
+    \caption{Truth Table for 28}
+\end{table}
+
+\section*{Exercise 29}
+Show that \((p \to r) \lor (q \to r)\) and \((p \land q) \to r\) are logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \to r\) & \(q \to r\) & \((p \to r) \lor (q \to r)\) & \(p \land q\) & \((p \land q) \to r\) \\
+        T     & T     & T     & T           & T           & T                            & T             & T                     \\
+        T     & T     & F     & F           & F           & F                            & T             & F                     \\
+        T     & F     & T     & T           & T           & T                            & F             & T                     \\
+        T     & F     & F     & F           & T           & T                            & F             & T                     \\
+        F     & T     & T     & T           & T           & T                            & F             & T                     \\
+        F     & T     & F     & T           & F           & T                            & F             & T                     \\
+        F     & F     & T     & T           & T           & T                            & F             & T                     \\
+        F     & F     & F     & T           & T           & T                            & F             & T
+    \end{tabular}
+    \caption{Truth Table for 29}
+\end{table}
+
+\section*{Exercise 30}
+Show that \(\lnot p \to (q \to r)\) and \(q \to (p \lor r)\) are logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(\lnot p\) & \(q \to r\) & \(\lnot p \to (q \to r)\) & \(p \lor r\) & \(q \to (p \lor r)\) \\
+        T     & T     & T     & F           & T           & T                         & T            & T                    \\
+        T     & T     & F     & F           & F           & T                         & T            & T                    \\
+        T     & F     & T     & F           & T           & T                         & T            & T                    \\
+        T     & F     & F     & F           & T           & T                         & T            & T                    \\
+        F     & T     & T     & T           & T           & T                         & T            & T                    \\
+        F     & T     & F     & T           & F           & F                         & F            & F                    \\
+        F     & F     & T     & T           & T           & T                         & T            & T                    \\
+        F     & F     & F     & T           & T           & T                         & F            & T
+    \end{tabular}
+    \caption{Truth Table for 30}
+\end{table}
+
+\section*{Exercise 31}
+Show that \(p \leftrightarrow q\) and \((p \to q) \land (q \to p)\) are logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c}
+        \(p\) & \(q\) & \(p \leftrightarrow q\) & \(p \to q\) & \(q \to p\) & \((p \to q) \land (q \to p)\) \\
+        T     & T     & T                       & T           & T           & T                             \\
+        T     & F     & F                       & F           & T           & F                             \\
+        F     & T     & F                       & T           & F           & F                             \\
+        F     & F     & T                       & T           & T           & T
+    \end{tabular}
+    \caption{Truth Table for 31}
+\end{table}
+
+\section*{Exercise 32}
+Show that \(p \leftrightarrow q\) and \(\lnot p \leftrightarrow \lnot q\) are logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c}
+        \(p\) & \(q\) & \(p \leftrightarrow q\) & \(\lnot p\) & \(\lnot q\) & \(\lnot p \leftrightarrow \lnot q\) \\
+        T     & T     & T                       & F           & F           & T                                   \\
+        T     & F     & F                       & F           & T           & F                                   \\
+        F     & T     & F                       & T           & F           & F                                   \\
+        F     & F     & T                       & T           & T           & T
+    \end{tabular}
+    \caption{Truth Table for 32}
+\end{table}
+
 \printbibliography
 
 \end{document}
