@@ -929,6 +929,226 @@ Show that \(p \leftrightarrow q\) and \(\lnot p \leftrightarrow \lnot q\) are lo
     \caption{Truth Table for 32}
 \end{table}
 
+\section*{Exercise 33}
+Show that \((p \to q) \land (q \to r) \to (p  \to r)\) is a tautology.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \to q\) & \(q \to r\) & \(p \to r\) & \((p \to q) \land (q \to r)\) & \((p \to q) \land (q \to r) \to (p \to r)\) \\
+        T     & T     & T     & T           & T           & T           & T                             & T                                           \\
+        T     & T     & F     & T           & F           & F           & F                             & T                                           \\
+        T     & F     & T     & F           & T           & T           & F                             & T                                           \\
+        T     & F     & F     & F           & T           & F           & F                             & T                                           \\
+        F     & T     & T     & T           & T           & T           & T                             & T                                           \\
+        F     & T     & F     & T           & F           & T           & F                             & T                                           \\
+        F     & F     & T     & T           & T           & T           & T                             & T                                           \\
+        F     & F     & F     & T           & T           & T           & T                             & T
+    \end{tabular}
+    \caption{Truth Table for 33}
+\end{table}
+
+\section*{Exercise 34}
+Show that \((p \lor q) \land (\lnot p \lor r) \to (q \lor r)\) is a tautology.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \lor q\) & \(\lnot p\) & \(\lnot p \lor r\) & \(q \lor r\) & \((p \lor q) \land (\lnot p \lor r)\) & \((p \lor q) \land (\lnot p \lor r) \to (q \lor r)\) \\
+        T     & T     & T     & T            & F           & T                  & T            & T                                     & T                                                    \\
+        T     & T     & F     & T            & F           & F                  & T            & F                                     & T                                                    \\
+        T     & F     & T     & T            & F           & T                  & T            & T                                     & T                                                    \\
+        T     & F     & F     & T            & F           & F                  & F            & F                                     & T                                                    \\
+        F     & T     & T     & T            & T           & T                  & T            & T                                     & T                                                    \\
+        F     & T     & F     & T            & T           & T                  & T            & T                                     & T                                                    \\
+        F     & F     & T     & F            & T           & T                  & T            & F                                     & T                                                    \\
+        F     & F     & F     & F            & T           & T                  & F            & F                                     & T
+    \end{tabular}
+    \caption{Truth Table for 34}
+\end{table}
+
+\section*{Exercise 35}
+Show that \((p \to q) \to r\) and \(p \to (q \to r)\) are not logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \to q\) & \((p \to q) \to r\) & \(q \to r\) & \(p \to (q \to r)\) \\
+        T     & T     & T     & T           & T                   & T           & T                   \\
+        T     & T     & F     & T           & F                   & F           & F                   \\
+        T     & F     & T     & F           & T                   & T           & T                   \\
+        T     & F     & F     & F           & T                   & T           & T                   \\
+        F     & T     & T     & T           & T                   & T           & T                   \\
+        F     & T     & F     & T           & F                   & F           & T                   \\
+        F     & F     & T     & T           & T                   & T           & T                   \\
+        F     & F     & F     & T           & F                   & T           & T
+    \end{tabular}
+    \caption{Truth Table for 35}
+\end{table}
+
+\section*{Exercise 36}
+Show that \((p \land q) \to r\) and \((p \to r) \land (q \to r)\) are not logically equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \(p\) & \(q\) & \(r\) & \(p \land q\) & \((p \land q) \to r\) & \(p \to r\) & \(q \to r\) & \((p \to r) \land (q \to r)\) \\
+        T     & T     & T     & T             & T                     & T           & T           & F                             \\
+        T     & T     & F     & T             & F                     & F           & F           & F                             \\
+        T     & F     & T     & F             & T                     & T           & T           & T                             \\
+        T     & F     & F     & F             & T                     & F           & T           & F                             \\
+        F     & T     & T     & F             & T                     & T           & T           & T                             \\
+        F     & T     & F     & F             & T                     & T           & F           & F                             \\
+        F     & F     & T     & F             & T                     & T           & T           & T                             \\
+        F     & F     & F     & F             & T                     & T           & T           & T
+    \end{tabular}
+    \caption{Truth Table for 36}
+\end{table}
+
+\section*{Exercise 37}
+Show that \((p \to q) \to (r \to s)\) and \((p \to r) \to (q \to s)\) are not logically equivalent.
+
+\noindent
+\textbf{Solution:}
+First,
+\begin{gather*}
+    (p \to q) \to (r \to s)                            \\
+    \equiv \lnot(\lnot p \lor q) \lor (\lnot r \lor s) \\
+    \equiv (p \land \lnot q) \lor (\lnot r \lor s).    \\
+\end{gather*}
+
+Second,
+\begin{gather*}
+    (p \to r) \to (q \to s)                             \\
+    \equiv \lnot (\lnot p \lor r) \lor (\lnot q \lor s) \\
+    \equiv (p \land \lnot r) \lor (\lnot q \lor s).     \\
+\end{gather*}
+
+Now, we need to show that \((p \land \lnot q) \lor (\lnot r \lor s) \equiv (p \land \lnot r) \lor (\lnot q \lor s)\).
+\begin{gather*}
+    (p \land \lnot q) \lor (\lnot r \lor s) \equiv (p \land \lnot r) \lor (\lnot q \lor s)                             \\
+    \text{implies } \lnot r \lor (p \land \lnot q) \equiv \lnot q \lor (p \land \lnot r)                               \\
+    \text{implies } (\lnot r \lor p) \land (\lnot r \lor \lnot q( \equiv (\lnot q \lor p) \land (\lnot q \lor \lnot r) \\
+    \text{implies } \lnot r \lor p \equiv \lnot q \lor p                                                               \\
+    \text{implies } \lnot r \equiv \lnot q                                                                             \\
+\end{gather*}
+which does not hold when \(q \equiv \text{T}\) and \(r \equiv \text{F}\).
+
+The \textbf{dual} of a compound proposition that contains only the logical operators \(\lor\), \(\land\), and \(\lnot\) is the compound proposition obtained by replacing each \(\lor\) by \(\land\), each \(\land\) by \(\lor\), each \textbf{T} by \textbf{F}, and each \textbf{F} by \textbf{T}. The dual of \(s\) is denoted by \(s^*\).
+
+\section*{Exercise 38}
+Find the dual of each of these compound propositions.
+\begin{enumerate}
+    \item[\textbf{a)}] \(p \lor \lnot q\)
+    \item[\textbf{b)}] \(p \land (q \lor (r \land \textbf{T}))\)
+    \item[\textbf{c)}] \((p \land \lnot q) \lor (q \land \textbf{F})\)
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
+\begin{enumerate}
+    \item[\textbf{a)}] \(p \land \lnot q\)
+    \item[\textbf{b)}] \(p \lor (q \land (r \lor \textbf{F}))\)
+    \item[\textbf{c)}] \((p \lor \lnot q) \land (q \lor \textbf{T})\)
+\end{enumerate}
+
+\section*{Exercise 39}
+\begin{enumerate}
+    \item[\textbf{a)}] \(p \land \lnot q \land \lnot r\)
+    \item[\textbf{b)}] \((p \land q \land r) \lor s\)
+    \item[\textbf{c)}] \((p \lor \textbf{F}) \land (q \lor \textbf{T})\)
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
+\begin{enumerate}
+    \item[\textbf{a)}] \(p \lor \lnot q \lor \lnot r\)
+    \item[\textbf{b)}] \((p \lor q \lor r) \land s\)
+    \item[\textbf{c)}] \((p \land \textbf{T}) \lor (q \land \textbf{F})\)
+\end{enumerate}
+
+\section*{Exercise 40}
+When does \(s^* = s\), where \(s\) is a compound proposition?
+
+\noindent
+\textbf{Solution:}
+\(s^* = s\) whenever \(s\) contains no conjunctions, disjunctions, tautologies, or contradictions. Therefore, \(s^* = s\) whenever \(s\) contains only one propositional variable.
+
+\section*{Exercise 41}
+Show that \((s^*)^* = s\) when \(s\) is a compound proposition.
+
+\noindent
+\textbf{Solution:}
+\((s^*)^*\) is the equivalent to switching the conjunctions to disjunctions back to conjunctions, disjunctions to conjunctions back to disjunctions, and so forth. Therefore, it performs each operation twice, thus returning the compound proposition back to the original state.
+
+\section*{Exercise 42}
+Show that the logical equivalences in Table 6, except for the double negation law, come in pairs, where each pair contains compound propositions that are duals of each other.
+
+\noindent
+\textbf{Solution:}
+Each law in the table (except for the double negation law) is made to show two propositions which are both duals of each other.
+
+\section*{Exercise 43}
+Why are the duals of two equivalent compound propositions also equivalent, where these compound propositions contain only the operators \(\land\), \(\lor\), and \(\lnot\)?
+
+\noindent
+\textbf{Solution:}
+As discussed in Exercise 42, all of the logical equivalences in Table 6, except for the double negation law, come in pairs, where each pair contains compound propositions that are duals of each other. When two compound propositions are logically equivalent and you take the dual of both compound propositions, they remain equivalent due to the dual symmetry presented in Table 6.
+
+\section*{Exercise 44}
+Find a compound proposition involving the propositional variables \(p\), \(q\), and \(r\) that is true when \(p\) and \(q\) are true and \(r\) is false, but is false otherwise. [\textit{Hint:} Use a conjunction of each propositional variable or its negation]
+
+\noindent
+\textbf{Solution:}
+\(p \land q \land \lnot r\)
+
+\section*{Exercise 45}
+Find a compound proposition involving the propositional variables \(p\), \(q\), and \(r\) that is true when exactly two of \(p\), \(q\), and \(r\) are true and is false otherwise. [\textit{Hint:} Form a disjunction of conjunctions. Include a conjunction for each combination of values for which the compound proposition is true. Each conjunction should include each of the three propositional variables or its negations.]
+
+\noindent
+\textbf{Solution:}
+\((p \land q \land \lnot r) \lor (p \land \lnot q \land r) \lor (\lnot p \land q \land r)\)
+
+\section*{Exercise 46}
+Suppose that a truth table in \(n\) propositional variables is specified. Show that a compound proposition with this truth table can be formed by taking the disjunction of conjunctions of the variables or their negations, with one conjunction included for each combination of values for which the compound proposition is true. The resulting compound proposition is said to be in \textbf{disjunctive normal form}.
+
+\noindent
+\textbf{Solution:}
+The problem description practically solves the problem in itself. Start with a compound proposition with the disjunction of all \(2^n\) possible conjunctions of \(n\) propositional variables or their negations. Each row of the truth table corresponds to a conjunction within the top-level compound proposition, where you simply take the conjunction of the propositional variable or their negations (e.g. if \(p \equiv \textbf{T}\) and \(q \equiv \textbf{F}\), form a conjunction \(p \land \lnot q\)). Finally, eliminate all conjunctions from the top-level compound proposition that do not satisfy any row of the truth table.
+
+A collection of logical operators is called \textbf{functionally complete} if every compound proposition is logically equivalent to a compound proposition involving only these logical operators.
+
+\section*{Exercise 47}
+Show that \(\lnot\), \(\land\), and \(\lor\) form a functionally complete collection of logical operators. [\textit{Hint:} Use the fact that every compound proposition is logically equivalent to one in disjunctive normal form, as shown in Exercise 46.]
+
+\noindent
+\textbf{Solution:}
+From Exercise 46, every compound proposition is logically equivalent to one in disjunctive normal form. Thus, since disjunctive normal form only utilizes the operators \(\lnot\), \(\land\), and \(\lor\), \(\lnot\), \(\land\), and \(\lor\) are a functionally complete collection of logical operators.
+
+\section*{Exercise 48}
+Show that \(\lnot\) and \(\land\) form a functionally complete collection of logical operators. [\textit{Hint:} First use a De Morgan law to show that \(p \lor q\) is logically equivalent to \(\lnot(\lnot p \land \lnot q)\).]
+
+\noindent
+\textbf{Solution:}
+By a De Morgan law, \(p \lor q \equiv \lnot( \lnot p \land \lnot q)\). Thus, any compound proposition in disjunctive normal form can be transformed to a compound proposition utilizing only \(\lnot\) and \(\land\) operators. Since all compound propositions can be represented in disjunctive normal form, all compound propositions can be represented with the operators \(\lnot\) and \(\land\).
+
+\section*{Exercise 49}
+Show that \(\lnot\) and \(\lor\) form a functionally complete collection of logical operators.
+
+\noindent
+\textbf{Solution:}
+Consider a compound proposition in disjunctive normal form. The inner conjunction compound propositions can be transformed to be represented by \(\lnot\) and \(\lor\) by a De Morgan law, and thus \(\lnot\) and \(\lor\) are a functionally complete collection of logical operators.
+
+We now present a group of exercises that involve the logical operators \textit{NAND} and \textit{NOR}. The proposition \(p \ \textit{NAND} \ q\) is true when either \(p\) or \(q\), or both, are false;
+
 \printbibliography
 
 \end{document}
