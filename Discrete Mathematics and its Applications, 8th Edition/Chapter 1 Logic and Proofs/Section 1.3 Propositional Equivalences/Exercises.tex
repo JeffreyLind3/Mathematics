@@ -1147,7 +1147,158 @@ Show that \(\lnot\) and \(\lor\) form a functionally complete collection of logi
 \textbf{Solution:}
 Consider a compound proposition in disjunctive normal form. The inner conjunction compound propositions can be transformed to be represented by \(\lnot\) and \(\lor\) by a De Morgan law, and thus \(\lnot\) and \(\lor\) are a functionally complete collection of logical operators.
 
-We now present a group of exercises that involve the logical operators \textit{NAND} and \textit{NOR}. The proposition \(p \ \textit{NAND} \ q\) is true when either \(p\) or \(q\), or both, are false;
+We now present a group of exercises that involve the logical operators \textit{NAND} and \textit{NOR}. The proposition \(p \ \textit{NAND} \ q\) is true when either \(p\) or \(q\), or both, are false; and it is false when both \(p\) and \(q\) are true. The proposition \(p \ \textit{NOR} \ q\) is true when both \(p\) and \(q\) are false, and it is false otherwise. The propositions \(p \ \textit{NAND} \ q\) and \(p \ \textit{NOR} \ q\) are denoted by \(p \mathbin{\mid} q\) and \(p \downarrow q\), respectively. (The operators \(\mathbin{\mid}\) and \(\downarrow\) are called the \textbf{Sheffer stroke} and the \textbf{Peirce arrow} after H.M. Sheffer and C.S. Peirce, respectively.)
+
+\section*{Exercise 50}
+Construct a truth table for the logical operator \textit{NAND}.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(q\) & \(p \ \textit{NAND} \ q\) \\
+        T     & T     & F                         \\
+        T     & F     & T                         \\
+        F     & T     & T                         \\
+        F     & F     & T
+    \end{tabular}
+    \caption{Truth Table for 50}
+\end{table}
+
+\section*{Exercise 51}
+Show that \(p \mathbin{\mid} q\) is logically equivalent to \(\lnot (p \land q)\).
+
+\noindent
+\textbf{Solution:}
+The truth table from Exercise 50 matches the truth table of \(\lnot (p \land q)\) and is thus logically equivalent.
+
+\section*{Exercise 52}
+Construct a truth table for the logical operator \textit{NOR}.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(q\) & \(p \ \textit{NOR} \ q\) \\
+        T     & T     & F                         \\
+        T     & F     & F                         \\
+        F     & T     & F                         \\
+        F     & F     & T
+    \end{tabular}
+    \caption{Truth Table for 51}
+\end{table}
+
+\section*{Exercise 53}
+Show that \(p  \downarrow q\) is logically equivalent to \(\lnot (p \lor q)\).
+
+\noindent
+\textbf{Solution:}
+The truth table from Exercise 52 matches the truth table of \(\lnot (p \lor q)\) and is thus logically equivalent.
+
+\section*{Exercise 54}
+In this exercise we will show that \(\left\{ \downarrow \right\}\) is a functionally complete collection of logical operators.
+\begin{enumerate}
+    \item[\textbf{a)}] Show that \(p \downarrow q\) is logically equivalent to \(\lnot p\).
+    \item[\textbf{b)}] Show that \((p \downarrow q) \downarrow (p \downarrow q)\) is logically equivalent to \(p \lor q\).
+    \item[\textbf{c)}] Conclude from parts (a) and (b), and Exercise 49, that \(\left\{\downarrow\right\}\) is a functionally complete collection of logical operators.
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
+\begin{enumerate}
+    \item[\textbf{a)}]
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(p\) & \(\lnot p\) & \(p \downarrow p\) \\
+        T     & F           & F                  \\
+        F     & T           & T
+    \end{tabular}
+    \caption{Truth Table for 54(a)}
+    \end{table}
+
+    \item[\textbf{b)}]
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \(p\) & \(q\) & \(p \lor q\) & \(p \downarrow q\) & \((p \downarrow q) \downarrow (p \downarrow q)\) \\
+        T     & T     & T            & F                  & T                                                \\
+        T     & F     & T            & F                  & T                                                \\
+        F     & T     & T            & F                  & T                                                \\
+        F     & F     & F            & T                  & F
+    \end{tabular}
+    \caption{Truth Table for 54(b)}
+    \end{table}
+    
+    \item[\textbf{c)}]
+    Exercise 49 showed that \(\lnot\) and \(\lor\) form a functionally complete collection of logical operators. Part (a) of this exercise showed that for any proposition \(p\), its negation can be represented using \(\downarrow\). Part (b) of this exercise showed that for any proposition \(p\), the disjunction can be represented with \(\downarrow\). Therefore, \(\left\{\downarrow\right\}\) forms a functionally complete collection of logical operators.
+\end{enumerate}
+
+\section*{Exercise 55}
+Find a compound proposition logically equivalent to \(p \to q\) using only the logical operator \(\downarrow\).
+
+\noindent
+\textbf{Solution}
+First, note that \(p \to q \equiv \lnot p \lor q\). From Exercise 54(a) we see that \(\lnot \phi \equiv \phi \downarrow \phi\) for a compound proposition \(\phi\), so \(\lnot p \lor q \equiv \left(p \downarrow p\right) \lor q\). From Exercise 54(b) we also see that \(\phi \lor \lambda \equiv \left(\phi \downarrow \lambda \right) \downarrow \left(\phi \downarrow \lambda\right)\). Therefore, a compound proposition logically equivalent to \(p \to q\) using only the logical operator \(\downarrow\) is \(\left(\left(p \downarrow p\right) \downarrow q\right) \downarrow \left(\left(\left(p \downarrow p\right)\right) \downarrow q \right)\).
+
+\section*{Exercise 56}
+Show that \(\left\{\mathbin{\mid}\right\}\) is a functionally complete collection of logical operators.
+
+\noindent
+\textbf{Solution:}
+From Exercise 48, it is known that \(\lnot\) and \(\land\) form a functionally complete collection of logical operators.
+
+Table \ref{Truth Table for 56 (NOT)} shows that for all propositions \(\phi\), \(\lnot \phi \equiv \phi \mathbin{\mid} \phi\).
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|c|c}
+    \(p\) & \(\lnot p\) & \(p \mathbin{\mid} p\) \\
+    T     & F           & F                      \\
+    F     & T           & T
+\end{tabular}
+\caption{Truth Table for 56 (NOT)}
+\label{Truth Table for 56 (NOT)}
+\end{table}
+
+Table \ref{Truth Table for 56 (NAND)} shows that for all propositions \(\phi\) and \(\lambda\), \(\phi \land \lambda \equiv \left(\phi \mathbin{\mid} \lambda\right) \mathbin{\mid} \left(\phi \mathbin{\mid} \lambda\right)\).
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|c|c|c|c}
+    \(p\) & \(q\) & \(p \land q\) & \(p \mathbin{\mid} q\) & \(\left(\phi \mathbin{\mid} \lambda\right) \mathbin{\mid} \left(\phi \mathbin{\mid} \lambda\right)\) \\
+    T     & T     & T             & F                      & T                                                                                                    \\
+    T     & F     & F             & T                      & F                                                                                                    \\
+    F     & T     & F             & T                      & F                                                                                                    \\
+    F     & F     & F             & T                      & F
+\end{tabular}
+\caption{Truth Table for 56 (NAND)}
+\label{Truth Table for 56 (NAND)}
+\end{table}
+
+Therefore, \(\left\{\mathbin{\mid}\right\}\) is a functionally complete collection of logical operators.
+
+\section*{Exercise 57}
+Show that \(p \mathbin{\mid} q\) and \(q \mathbin{\mid} p\) are equivalent.
+
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|c|c|c}
+    \(p\) & \(q\) & \(p \mathbin{\mid} q\) & \(q \mathbin{\mid} p\) \\
+    T     & T     & F                      & F                      \\
+    T     & F     & T                      & T                      \\
+    F     & T     & T                      & T                      \\
+    F     & F     & T                      & T
+\end{tabular}
+\caption{Truth Table for 57}
+\end{table}
+
+\section*{Exercise 58}
+Show that \(p \mathbin{\mid} \left(q \mathbin{\mid} r\right)\) and \(\left(p \mathbin{\mid} q\right) \mathbin{\mid} r\) are not equivalent, so that the logical operator \(\mathbin{\mid}\) is not associative.
 
 \printbibliography
 
