@@ -1300,6 +1300,60 @@ Show that \(p \mathbin{\mid} q\) and \(q \mathbin{\mid} p\) are equivalent.
 \section*{Exercise 58}
 Show that \(p \mathbin{\mid} \left(q \mathbin{\mid} r\right)\) and \(\left(p \mathbin{\mid} q\right) \mathbin{\mid} r\) are not equivalent, so that the logical operator \(\mathbin{\mid}\) is not associative.
 
+\noindent
+\textbf{Solution:}
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|c|c|c|c|c|c}
+    \(p\) & \(q\) & \(r\) & \(p \mathbin{\mid} q\) & \(\left( p \mathbin{\mid} q\right) \mathbin{\mid} r\) & \(q \mathbin{\mid} r\) & \(p \mathbin{\mid} \left(q \mathbin{\mid} r\right) \)\\
+    T     & T     & T     & F                      & T                                                     & F                      & T                                                    \\
+    T     & T     & F     & F                      & T                                                     & T                      & F                                                    \\
+    T     & F     & T     & T                      & F                                                     & T                      & F                                                    \\
+    T     & F     & F     & T                      & T                                                     & T                      & F                                                    \\
+    F     & T     & T     & T                      & F                                                     & F                      & T                                                    \\
+    F     & T     & F     & T                      & T                                                     & T                      & T                                                    \\
+    F     & F     & T     & T                      & F                                                     & T                      & T                                                    \\
+    F     & F     & F     & T                      & T                                                     & T                      & T
+\end{tabular}
+\caption{Truth Table for 58}
+\end{table}
+
+\section*{Exercise 59}
+How many different truth tables of compound propositions are there that involve the propositional variables \(p\) and \(q\)?
+
+\noindent
+\textbf{Solution:}
+16
+
+\section*{Exercise 60}
+Show that if \(p\), \(q\), and \(r\) are compound propositions such that \(p\) and \(q\) are logically equivalent and \(q\) and \(r\) are logically equivalent, then \(p\) and \(r\) are logically equivalent.
+
+\noindent
+\textbf{Solution:}
+If \(p \equiv q\), then the truth table columns for \(p\) and \(q\) are equivalent. If \(q \equiv r\), then the truth table columns for \(q\) and \(r\) are equivalent. Therefore, since this necessarily implies that the truth table columns for \(p\) and \(r\) are the same, then \(p \equiv r\).
+
+\section*{Exercise 61}
+The following sentence is taken from the specification of a telephone system: "If the directory database is opened, then the monitor is put in a closed state, if the system is not in its initial state." This specification is hard to understand because it involves two conditional statements. Find an equivalent, easier-to-understand specification that involved disjunctions and negations but not conditional statements.
+
+\noindent
+\textbf{Solution:}
+Let \(p\) be the proposition "The directory database is opened," \(q\) be the proposition "The monitor is put in a closed state," and \(r\) be the proposition "The system is not in its initial state."
+
+Right now, the statement is in the form \(\left(p \land r\right) \to q\). Then, \(\left(p \land r\right) \to q \equiv \lnot\left(p \land r\right) \lor q \equiv \lnot p \lor \lnot r \lor q\). Finally, this translates into natural language as "The directory database is not opened or the system is in its initial state or the monitor is put in a closed state.
+
+\section*{Exercise 62}
+How many of the disjunctions \(p \lor \lnot q\), \(\lnot p \lor q\), \(q \lor r\), \(q \lor \lnot r\), and \(\lnot q \lor \lnot r\) can be made simultaneously true by an assignment of truth values to \(p\), \(q\), and \(r\)?
+
+\noindent
+\textbf{Solution:}
+All \(5\) of these statements can be made true with \(p \equiv \textbf{T}\), \(q \equiv \textbf{T}\), and \(r \equiv \textbf{F}\).
+
+\section*{Exercise 63}
+How many of the disjunctions \(p \lor \lnot q \lor s\), \(\lnot p \lor \lnot r \lor s\), \(\lnot p \lor \lnot r \lor \lnot s\), \(\lnot p \lor q \lor \lnot s\), \(q \lor r \lor \lnot s\), \(q \lor \lnot r \lor \lnot s\), \(\lnot p \lor \lnot q \lor \lnot s\), \(p \lor r \lor s\), and \(p \lor r \lor \lnot s\) can be made simultaneously true by an assignment of truth values to \(p\), \(q\), \(r\), and \(s\)?
+
+\noindent
+\textbf{Solution:}
+
 \printbibliography
 
 \end{document}
