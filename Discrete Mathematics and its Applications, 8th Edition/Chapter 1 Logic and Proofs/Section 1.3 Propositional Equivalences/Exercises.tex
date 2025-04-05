@@ -1353,6 +1353,41 @@ How many of the disjunctions \(p \lor \lnot q \lor s\), \(\lnot p \lor \lnot r \
 
 \noindent
 \textbf{Solution:}
+One solution that maximizes the number of true disjunctions is \(p = 0\), \(q = 1\), \(r = 1\), \(s = 1\), which makes all \(9\) disjunctions true.
+
+\section*{Exercise 64}
+Show that the negation of an unsatisfiable compound proposition is a tautology and the negation of a compound proposition that is a tautology is unsatisfiable.
+
+\noindent
+\textbf{Solution:}
+Consider the truth table for an unsatisfiable compound proposition. The compound proposition's column is all filled with \textbf{F}. Negating this gives a compound proposition with a column filled with \textbf{T}, which is the definition of a tautology. This same argument applies for the second point of showing that the negation of a tautology is unsatisfiable.
+
+\section*{Exercise 65}
+Determine whether each of these compound propositions is satisfiable.
+\begin{enumerate}
+    \item[\textbf{a)}] \((p \lor \lnot q) \land (\lnot p \lor q) \land (\lnot p \lor \lnot q)\)
+    \item[\textbf{b)}] \((p \to q) \land (p \to \lnot q) \land (\lnot p \to q) \land (\lnot p \to \lnot q)\)
+    \item[\textbf{c)}] \((p \leftrightarrow q) \land (\lnot p \leftrightarrow q)\)
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
+\begin{enumerate}
+    \item[\textbf{a)}] This is satisfiable with \(p = 0\) and \(q = 0\).
+    \item[\textbf{b)}] This is unsatisfiable as there will always be a conditional with the form \(\textbf{T} \to \textbf{F}\).
+    \item[\textbf{c)}] This is unsatisfiable as there will be no combination of \(p\) and \(q\) to get both biconditionals to be of form \(\textbf{T} \leftrightarrow \textbf{T}\) or \(\textbf{F} \leftrightarrow \textbf{F}\)
+\end{enumerate}
+
+\section*{Exercise 66}
+Determine whether each of these compound propositions is satisfiable
+\begin{enumerate}
+    \item[\textbf{a)}] \((p \lor q \lor \lnot r) \land (p \lor \lnot q \lor \lnot s) \land (p \lor \lnot r \lor \lnot s) \land (\lnot p \lor \lnot q \lor \lnot s) ]\land (p \lor q \lor \lnot s)\)
+    \item[\textbf{b)}] \((\lnot p \lor \lnot q \lor r) \land (\lnot p \lor q \lor \lnot s) \land (p \lor \lnot q \lor \lnot s) \land (\lnot p \lor \lnot r \lor \lnot s) \land (p \lor q \lor \lnot r) \land (p \lor \lnot r \lor \lnot s)\)
+    \item[\textbf{c)}] \((p \lor q \lor r) \land (p \lor \lnot q \lor \lnot s) \land (q \lor \lnot r \lor s) \land (\lnot p \lor r \lor s) \land (\lnot p \lor q \lor \lnot s) \land (p \lor \lnot q \lor \lnot r) \land(\lnot p \lor \lnot q \lor s) \land (\lnot p \lor \lnot r \lor \lnot s)\)
+\end{enumerate}
+
+\noindent
+\textbf{Solution:}
 
 \printbibliography
 
