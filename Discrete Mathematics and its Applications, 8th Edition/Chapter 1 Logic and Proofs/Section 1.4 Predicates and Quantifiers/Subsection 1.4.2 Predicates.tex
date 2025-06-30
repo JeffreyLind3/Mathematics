@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.4 Predicates and Quantifiers - Subsection 1.4.2 Predicates}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.com}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.4 Predicates and Quantifiers - Subsection 1.4.2 Predicates \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+Statements involving variables, such as
+
+\begin{center}
+    "\(x > 3\)," "\(x = y + 3\)," "\(x + y = z\),"
+\end{center}
+
+and
+
+\begin{center}
+    "Computer \(x\) is under attack by an intruder,"
+\end{center}
+
+and
+
+\begin{center}
+    "Computer \(x\) is functioning properly,"
+\end{center}
+
+are often found in mathematical assertions, in computer programs, and in system specifications. These statements are neither true nor false when the values of the variables are not specified. In this section, we will discuss the ways that propositions can be produced from such statements.
+
+The statement "\(x\) is greater than \(3\)" has two parts. The first part, the variable \(x\), is the subject of the statement. The second part – the \textbf{predicate}, "is greater than \(3\)" – refers to a property that the subject of the statement can have. We can denote the statement "\(x\) is greater than \(3\)" by \(P(x)\), where \(P\) denotes the predicate "is greater than \(3\)" and \(x\) is the variable. The statement \(P(x)\) is also said to be the value of a \textbf{propositional function} \(P\) at \(x\). Once a value has been assigned to the variable \(x\), the statement \(P(x)\) becomes a proposition and has a truth value. Consider Examples \ref{Example: 1} and \ref{Example: 2}.
+
+\begin{example}\label{Example: 1}
+    Let \(P(x)\) denote the statement "\(x > 3\)." What are the truth values of \(P(4)\) and \(P(2)\)?
+
+    \noindent
+    \textbf{Solution:}
+    We obtain the statement \(P(4)\) by setting \(x = 4\) in the statement "\(x > 3\)." Hence, \(P(4)\), which is the statement "\(4 > 3\)," is true. However, \(P(2)\), which is the statement "\(2 > 3\)," is false.
+\end{example}
+
+\begin{example}\label{Example: 2}
+    Let \(A(x)\) denote the statement "Computer \(x\) is under attack by an intruder." Suppose that of the computers on campus, only CS2 and MATH1 are currently under attack by intruders. What are the truth values of \(A(\text{CS1})\), \(A(\text{CS2})\), and \(A(\text{MATH1})\)?
+
+    \noindent
+    \textbf{Solution:}
+    We obtain the statement \(A(\text{CS1})\) by setting \(x = \text{CS1}\) in the statement "Computer \(x\) is under attack by an intruder." Because CS1 is not on the list of computers currently under attack, we conclude that \(A(\text{CS1})\) is false. Similarly, because CS2 and MATH1 are on the list of computers under attack, we know that \(A(\text{CS2})\) and \(A(\text{MATH1})\) are true.
+\end{example}
+
+We can also have statements that involve more than one variable. For instance, consider the statement "\(x = y + 3\)." We can denote this statement by \(Q(x, y)\), where \(x\) and \(y\) are variables and \(Q\) is the predicate. When values are assigned to the variables \(x\) and \(y\), the statement \(Q(x, y)\) has a truth value.
+
+\begin{example}
+    Let \(Q(x, y)\) denote the statement "\(x = y + 3\)." What are the truth values of the propositions \(Q(1, 2)\) and \(Q(3, 0)\)?
+
+    \noindent
+    \textbf{Solution:}
+    To obtain \(Q(1, 2)\), set \(x = 1\) and \(y = 2\) in the statement \(Q(x, y,)\). Hence, \(Q(1, 2)\) is the statement "\(1 = 2 + 3\),"" which is false. The statement \(Q(3, 0)\) is the proposition "\(3 = 0 + 3\)," which is true.
+\end{example}
+
+\begin{example}
+    Let \(A(c, n)\) denote the statement "Computer \(c\) is connected to network \(n\)," where \(c\) is a variable representing a computer and \(n\) is a variable representing a network. Suppose that the computer MATH1 is connected to network CAMPUS2, but not to network CAMPUS1. What are the values of \(A(\text{MATH1}, \text{CAMPUS1})\) and \(A(\text{MATH1}, \text{CAMPUS2})\)?
+
+    \noindent
+    \textbf{Solution:}
+    Because MATH1 is not connected to the CAMPUS1 network, we see that \(A(\text{MATH1}, \text{CAMPUS1})\) is false. However, because MATH1 is connected to the CAMPUS2 network, we see that \(A(\text{MATH1}, \text{CAMPUS2})\) is true.
+\end{example}
+
+Similarly, we can let \(R(x, y, z)\) denote the statement "\(x + y = z\)." When values are assigned to the variables \(x\), \(y\), and \(z\), this statement has a truth value.
+
+\begin{example}
+    What are the truth values of the proposition \(R(1, 2, 3)\) and \(R(0, 0, 1)\)?
+
+    \noindent
+    \textbf{Solution:}
+    The proposition \(R(1, 2, 3)\) is obtained by setting \(x = 1\), \(y = 2\), and \(z = 3\) in the statement \(R(x, y, z)\). We see that \(R(1, 2, 3)\) is the statement "\(1 + 2 = 3\)," which is true. Also note that \(R(0, 0, 1)\), which is the statement "\(0 + 0 = 1\)," is false.
+\end{example}
+
+In general, a statement involving the \(n\) variables \(x_1, x_2, \ldots, x_n\) can be denoted by
+
+\begin{equation}
+    P(x_1, x_2, \ldots, x_n).
+\end{equation}
+
+A statement of the form \(P(x_1, x_2, \ldots, x_n)\) is the value of the \textbf{propositional function} \(P\) at the \(n\)-tuple \((x_1, x_2, \ldots, x_n)\), and \(P\) is also called an \(n\)-\textbf{place predicate} or an \(n\)-\textbf{ary predicate.}
+
+Propositional functions occur in computer programs, as Example \ref{Example: 6} demonstrates.
+
+\begin{example}\label{Example: 16}
+    Consider the statement
+    
+    \begin{center}
+        \textbf{if} \(x > 0\) \textbf{then} \(x \coloneq x + 1\)
+    \end{center}
+
+    When this statement is encountered in a program, the value of the variable \(x\) at that point in the execution of the program is inserted into \(P(x)\), which is "\(x > 0\)." If \(P(x)\) is true for this value of \(x\), the assignment statement \(x \coloneq x + 1\) is executed, so the value of \(x\) is increased by \(1\). If \(P(x)\) is false for this value of \(x\), the assignment statement is not executed, so the value of \(x\) is not changed.        
+\end{example}
+
+\section{Preconditions and Postconditions}
+Predicates are also used to establish the correctness of computer programs, that is, to show that computer programs always produce the desired output when given valid input. (Note that unless the correctness of a computer program is established, no amount of testing can show that it produces the desired output for all input values, unless every single input value is tested.) The statements that describe valid input are known as \textbf{preconditions} and the conditions that the output should satisfy when the program has run are known as \textbf{postconditions}. As Example \ref{Example: 7} illustrates, we use predicates to describe both preconditions and postconditions. We will study this process in greater detail in Section 5.5.
+
+\begin{example}\label{Example: 7}
+    Consider the following program, designed to interchange the values of two variables \(x\) and \(y\).
+    
+    \begin{center}
+        \(\texttt{temp} \coloneq x\) \\
+        \(x \coloneq y\)             \\
+        \(y \coloneq \texttt{temp}\)
+    \end{center}
+
+    Find predicates that we can use as the precondition and the postcondition to verify the correctness of this program. Then explain how to use them to verify that for all valid input the program docs what is intended.    
+\end{example}
+
+\printbibliography
+
+\end{document}
