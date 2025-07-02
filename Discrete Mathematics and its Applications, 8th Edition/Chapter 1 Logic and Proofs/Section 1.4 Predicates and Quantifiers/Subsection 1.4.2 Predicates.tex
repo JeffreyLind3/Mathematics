@@ -102,7 +102,7 @@ A statement of the form \(P(x_1, x_2, \ldots, x_n)\) is the value of the \textbf
 
 Propositional functions occur in computer programs, as Example \ref{Example: 6} demonstrates.
 
-\begin{example}\label{Example: 16}
+\begin{example}\label{Example: 6}
     Consider the statement
     
     \begin{center}
@@ -124,7 +124,13 @@ Predicates are also used to establish the correctness of computer programs, that
         \(y \coloneq \texttt{temp}\)
     \end{center}
 
-    Find predicates that we can use as the precondition and the postcondition to verify the correctness of this program. Then explain how to use them to verify that for all valid input the program docs what is intended.    
+    Find predicates that we can use as the precondition and the postcondition to verify the correctness of this program. Then explain how to use them to verify that for all valid input the program does what is intended.
+
+    \noindent
+    \textbf{Solution:}
+    For the precondition, we need to express that \(x\) and \(y\) have particular values before we run the program. So, for this precondition we use the predicate \(P(x, y)\), where \(P(x, y)\) is the statement "\(x = a\) and \(y = b\)," where \(a\) and \(b\) are the values of \(x\) and \(y\) before we run the program. Because we want to verify that the program swaps the values of \(x\) and \(y\) for all inputs values, for the postcondition we can use \(Q(x, y)\), where \(Q(x, y)\) is the statement "\(x = b\) and \(y = a\)."
+
+    To verify that the program always does what it is supposed to do, suppose that the precondition \(P(x, y)\) holds. That is, we suppose that the statement "\(x = a\) and \(y = b\)" is true. This means that \(x = a\) and \(y = b\). The first step of the program, \(\textit{temp} \coloneq x\), assigns the value of \(x\) to the variable \textit{temp}, so after this step we know that \(x = a\), \(\textit{temp} = a\), and \(y = b\). After the second step of the program, \(x \coloneq y\), we know that \(x = b\), \(\textit{temp} = a\), and \(y = b\). Finally, after the third step, we know that \(x = b\), \(\textit{temp} = a\), and \(y = a\). Consequently, after this program is run, the postcondition \(Q(x, y)\) holds, that is, the statement "\(x = b\) and \(y = a\)" is true.
 \end{example}
 
 \printbibliography
