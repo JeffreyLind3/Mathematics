@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.4 Predicates and Quantifiers - Subsection 1.4.4 Quantifiers Over Finite Domains}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.com}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.4 Predicates and Quantifiers - Subsection 1.4.4 Quantifiers Over Finite Domains \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+When the domain of a quantifier is finite, that is, when all its elements can be listed, quantified statements can be expressed using propositional logic. In particular, when the elements of the domain are \(x_1, x_2, \ldots,x_n\), where \(n\) is a positive integer, the universal quantification \(\forall x P(x)\) is the same as the conjunction
+
+\begin{equation*}
+    P(x_1) \land P(x_2) \land \cdots \land P(x_n),
+\end{equation*}
+
+because this conjunction is true if and only if \(P(x_1), P(x_2), \ldots, P(x_n)\) are all true.
+
+\begin{example}
+    What is the truth value of \(\forall x P(x)\), where \(P(x)\) is the statement "\(x^2 < 10\)" and the domain consists of the positive integers not exceeding \(4\)?
+
+    \noindent
+    \textbf{Solution:}
+    The statement \(\forall x P(x)\) is the same as the conjunction
+    
+    \begin{equation*}
+        P(1) \land P(2) \land P(3) \land P(4),
+    \end{equation*}
+
+    because the domain consists of the integers \(1\), \(2\), \(3\), and \(4\). Because \(P(4)\), which is the statement "\(4^2 < 10\)," is false, it follows that \(\forall x P(x)\) is false.
+\end{example}
+
+Similarly, when the elements of the domain are \(x_1\), \(x_2\), \ldots, \(x_n\), where \(n\) is a positive integer, the existential quantification \(\exists x P(x)\) is the same as the disjunction
+
+\begin{equation*}
+    P(x_1) \lor P(x_2) \lor \cdots \lor P(x_n)
+\end{equation*}
+
+because this disjunction is true if and only if at least one of \(P(x_1), P(x_2) , \ldots, P(x_n)\) is true.
+
+\begin{example}
+    What is the truth value of \(\exists x P(x)\), where \(P(x)\) is the statement "\(x^2 > 10\)" and the universe of discourse consists of the positive integers not exceeding \(4\)?
+
+    \noindent
+    \textbf{Solution:}
+    Because the domain is \(\{1, 2, 3, 4\}\), the proposition \(\exists x P(x)\) is the same as the disjunction
+
+    \begin{equation*}
+        P(1) \lor P(2) \lor P(3) \lor P(4).
+    \end{equation*}
+
+    Because \(P(4)\), which is the statement "\(4^2 > 10\)," is true, it follows that \(\exists x P(x)\) is true.
+\end{example}
+
+\section{Connections Between Quantification and Looping}
+It is sometimes helpful to think of looping and searching when determining the truth value of a quantification. Suppose that there are \(n\) objects in the domain for the variable \(x\). To determine whether \(\forall x P(x)\) is true, we can loop through all \(n\) values of \(x\) to see whether \(P(x)\) is always true. If we encounter a value \(x\) for which \(P(x)\) is false, then we have shown that \(\forall x P(x)\) is false. Otherwise, \(\forall xP(x)\) is true. To see whether \(\exists x P(x)\) is true, we loop through the \(n\) values of \(x\) searching for a value for which \(P(x)\) is true. If we find one, then \(\exists x P(x)\) is true. If we never find such an \(x\), then we have determined that \(\exists x P(x)\) is false. (Note that this searching procedure does not apply if there are infinitely many values in the domain. However, it is still a useful way of thinking about the truth values of quantifications.)
+
+\printbibliography
+
+\end{document}
