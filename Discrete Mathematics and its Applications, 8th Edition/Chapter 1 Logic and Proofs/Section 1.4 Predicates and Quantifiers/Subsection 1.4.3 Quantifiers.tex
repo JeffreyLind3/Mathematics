@@ -108,6 +108,57 @@ As we have pointed out, specifying the domain is mandatory when quantifiers are 
     The universal quantification \(\forall x(x^2 \ge x)\), where the domain consists of all real numbers, is false. For example, \(\left(\frac{1}{2}\right)^2 \not\ge \frac{1}{2}\). Note that \(x^2 \ge x\) if and only if \(x^2 - x = x(x - 1) \ge 0\). Consequently, \(x^2 \ge x\) if and only if \(x \le 0\) or \(x \ge 1\). It follows that \(\forall x (x^2 \geq x)\) is false if the domain consists of all real numbers (because the inequality is false for all real numbers \(x\) with \(0 < x < 1\)). However, if the domain consists of the integers, \(\forall x(x^2 \ge x)\) is true, because there are no integers \(x\) with \(0 < x < 1\).
 \end{example}
 
+\section{The Existential Quantifier}
+Many mathematical statements assert that there is an element with a certain property. Such statements are expressed using existential quantification. With existential quantification, we form a proposition that is true if and only if \(P(x)\) is true for at least one value of \(x\) in the domain.
+
+\begin{definition}
+    The \textit{existential quantification} of \(P(x)\) is the proposition
+    \begin{center}
+        "There exists an element \(x\) in the domain such that \(P(x)\)."
+    \end{center}
+    We use the notation \(\exists x P(x)\) for the existential quantification of \(P(x)\). Here \(\exists\) is called the \textit{existential quantifier}.
+\end{definition}
+
+A domain must always be specified when a statement \(\exists x P(x)\) is used. Furthermore, the meaning of \(\exists x P(x)\) changes when the domain changes. Without specifying the domain, the statement \(\exists x P(x)\) has no meaning.
+
+Besides the phrase "there exists," we can also express existential quantification in many other ways, such as by using the words "form some," "for at least one," or "there is." The existential quantification \(\exists x P(x)\) is read as
+
+\begin{center}
+    "There is an \(x\) such that \(P(x)\),"\\
+    "There is at least one \(x\) such that \(P(x)\),"
+\end{center}
+
+or
+
+\begin{center}
+    "For some \(x P(x)\)."
+\end{center}
+
+The meaning of the existential quantifier is summarized in the second row of Table \ref{Table: 1}. We illustrate the use of the existential quantifier in Examples \ref{Example: 13}, \ref{Example: 14}, and 16.
+
+\begin{example}\label{Example: 13}
+    Let \(P(x)\) denote the statement "\(x > 3\)." What is the truth value of the quantification \(\exists x P(x)\), where the domain consists of all real numbers?
+
+    \noindent
+    \textbf{Solution:}
+    Because "\(x > 3\)" is sometimes true – for instance, when \(x = 4\) – the existential quantification of \(P(x)\), which is \(\exists x P(x)\), is true.
+\end{example}
+
+Observe that the statement \(\exists x P(x)\) is false if and only if there is no element \(x\) in the domain for which \(P(x)\) is true. That is, \(\exists x P(x)\) is false if and only if \(P(x)\) is false for every element of the domain. We illustrate this observation in Example \ref{Example: 14}.
+
+\begin{example}\label{Example: 14}
+    Let \(Q(x)\) denote the statement "\(x = x + 1\)." What is the truth value of the quantification \(\exists x P(x)\), where the domain consists of all real numbers?
+
+    \noindent
+    \textbf{Solution:}
+    Because \(Q(x)\) is false for every real number \(x\), the existential quantification of \(Q(x)\), which is \(\exists x Q(x)\), is false.
+\end{example}
+
+\textbf{\textit{Remark:}} Generally, an implicit assumption is made that all domain of discourse for quantifiers are nonempty. If the domain is empty, then \(\exists x Q(x)\) is false whenever \(Q(x)\) is a propositional function because when the domain is empty, there can be no element \(x\) in the domain for which \(Q(x)\) is true.
+
+\section{The Uniqueness Quantifier}
+We have now introduced universal and existential quantifiers. These are the most important quantifiers in mathematics and computer science. However, there is no limitation on the number of different quantifiers we can define, such as "there are exactly two," "there are no more than three," "there are at least \(100\)," and so on. Of these other quantifiers, the one that is most often seen is the \textbf{uniqueness quantifier,} denoted by \(\exists!\) or \(\exists_1\). The notation \(\exists ! x P(x)\) [or \(\exists_1 x P(x)\)] states "There exists a unique \(x\) such that \(P(x)\) is true." (Other phrases for uniqueness quantification include "there is exactly one" and "there is one and only one.") For instance, \(\exists ! (x - 1 = 0)\), where the domain is the set of real numbers, states that there is a unique real number \(x\) such that \(x - 1 = 0\). This is a true statement, as \(x = 1\) is the unique real number such that \(x - 1 = 0\). Observe that we can use quantifiers and propositional logic to express uniqueness (see Exercise 52 in Section 1.5), so the uniqueness quantifier can be avoided. Generally, it is best to stick with existential and universal quantifiers so that rules of inference for these quantifiers can be used.
+
 \printbibliography
 
 \end{document}
