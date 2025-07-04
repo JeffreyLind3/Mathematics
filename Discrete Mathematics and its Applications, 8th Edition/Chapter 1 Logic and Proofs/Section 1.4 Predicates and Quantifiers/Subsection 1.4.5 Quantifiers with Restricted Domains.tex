@@ -1,0 +1,47 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{Axon}
+
+\title{Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.4 Predicates and Quantifiers - Subsection 1.4.5 Quantifiers with Restricted Domains}
+
+\authors{
+    \addauthor{Jeffrey G. Lind III}{jeffrey@jeffreylind.com}
+}
+
+\addbibresource{Bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\makeauthor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Notes on Discrete Mathematics and its Applications, 8th Edition - Chapter 1 The Foundations: Logic and Proofs - Section 1.4 Predicates and Quantifiers - Subsection 1.4.5 Quantifiers with Restricted Domains \cite{Rosen}.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+An abbreviated notation is often used to restrict the domain of a quantifier. In this notation, a condition a variable must satisfy is included after the quantifier. This is illustrated in Example \ref{Example: 17}. We will also describe other forms of this notation involving set membership in Section 2.1.
+
+\begin{example}\label{Example: 17}
+    What do the statements \(\forall x < 0 (x^2 > 0)\), \(\forall y \neq 0 (y^3 \neq 0)\), and \(\exists z > 0 (z^2 = 2)\) mean, where the domain in each case consists of the real numbers?
+
+    \noindent
+    \textbf{Solution:}
+    The statement \(\forall x < 0 (x^2 > 0)\) states that for every real number \(x\) with \(x < 0\), \(x^2 > 0\). That is, it states "The square of a negative real number is positive." This statement is the same as \(\forall x(x < 0 \to x^2 > 0)\).
+
+    The statement \(\forall y \neq 0(y^3 \neq 0)\) states that for every real number \(y\) with \(y \neq 0\), we have \(y^3 \neq 0\). That is, it states "The cube of every nonzero real number is nonzero." This statement is equivalent to \(\forall y(y \neq 0 \to y^3 \neq 0)\).
+
+    Finally, the statement \(\exists z > 0 (z^2 = 2)\) states that there exists a real number \(z\) with \(z > 0\) such that \(z^2 = 2\). That is, it states "There is a positive square root of \(2\)." This statement is equivalent to \(\exists z(z > 0 \land z^2 = 2)\).
+\end{example}
+
+Note that the restriction of a universal quantification is the same as the universal quantification of a conditional statement. For instance, \(\forall x < 0 (x^2 > 0)\) is another way of expressing \(\forall x (x < 0 \to x^2 > 0)\). On the other hand, the restriction of an existential quantification is the same as the existential quantification of a conjunction. For instance, \(\exists z > 0 (z^2 = 2)\) is another way of expressing \(\exists z (z > 0 \land z^2 = 2)\).
+
+\printbibliography
+
+\end{document}
