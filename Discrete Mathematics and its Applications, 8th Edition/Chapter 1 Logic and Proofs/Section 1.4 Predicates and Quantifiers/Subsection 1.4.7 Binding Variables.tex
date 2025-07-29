@@ -33,7 +33,7 @@ The part of a logical expression to which a quantifier is applied is called the 
 \begin{example}
     In the statement \(\exists x (x + y = 1)\), the variable \(x\) is bound by the existential quantification \(\exists x\), but the variable \(y\) is free because it is not bound by a quantifier and no value is assigned to this variable. This illustrates that in the statement \(\exists x (x + y = 1)\), \(x\) is bound, but \(y\) is free.
 
-    In the statement \(\exists x (P(x) \land Q(x)) \lor \forall x R(x)\), all variables are bound. The scope of the first quantifier, \(\exists x\), is the expression \(P(x) \land Q(x)\)
+    In the statement \(\exists x (P(x) \land Q(x)) \lor \forall x R(x)\), all variables are bound. The scope of the first quantifier, \(\exists x\), is the expression \(P(x) \land Q(x)\), because \(\exists x\) is applied only to \(P(x) \land Q(x)\) and not to the rest of the statement. Similarly, the scope of the second quantifier, \(\forall x\), is the expression \(R(x)\). That is, the existential quantifier binds the variable \(x\) in \(P(x) \land Q(x)\) and the universal quantifier \(\forall x\) binds the variable \(x\) in \(R(x)\). Observe that we could have written our statement using two different variables \(x\) and \(y\), as \(\exists x(P(x) \land Q(x)) \lor \forall y R(y)\), because the scopes of the two quantifiers do not overlap. The reader should be aware that in common usage, the same letter is often used to represent variables bound by different quantifiers with scopes that do not overlap.
 \end{example}
 
 \printbibliography
